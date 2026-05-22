@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and temporary outputs
+*.log
+audits/logs/
+artifacts/generated/raw_outputs/
+artifacts/generated/scratch/
+
+# Sensitive or local-only files
+*.key
+*.pem
+secrets/
+.env.*

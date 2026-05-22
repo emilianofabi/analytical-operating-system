@@ -1,0 +1,29 @@
+﻿{
+  "learner_id": "string",
+  "name": "string",
+  "current_tier": "Foundational | Methods & Systems | Integration & Judgment",
+  "active_modules": [
+    "string"
+  ],
+  "preferred_style": {
+    "depth": "novice | proficient | advanced | doctorate",
+    "tone": "concise | rigorous | academic | professional",
+    "math": "avoid | include_when_useful | emphasize",
+    "code": "avoid | include_when_useful | emphasize",
+    "format": "lesson | memo | project | rubric | portfolio"
+  },
+  "goals": {
+    "professional": [
+      "string"
+    ],
+    "academic": [
+      "string"
+    ],
+    "portfolio": [
+      "string"
+    ],
+    "capstone": [
+      "string"
+    ]
+  }
+}

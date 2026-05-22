@@ -1,0 +1,25 @@
+﻿{
+  "artifacts": [
+    {
+      "artifact_id": "string",
+      "title": "string",
+      "type": "lesson | memo | notebook | project | capstone | portfolio_case_study | rubric_review | oral_defense",
+      "path": "string",
+      "module_id": "string",
+      "module_name": "string",
+      "primary_competencies": [
+        "string"
+      ],
+      "secondary_competencies": [
+        "string"
+      ],
+      "status": "draft | reviewed | revised | portfolio_ready | archived",
+      "rubrics_used": [
+        "string"
+      ],
+      "created_at": "YYYY-MM-DD",
+      "updated_at": "YYYY-MM-DD",
+      "notes": "string"
+    }
+  ]
+}

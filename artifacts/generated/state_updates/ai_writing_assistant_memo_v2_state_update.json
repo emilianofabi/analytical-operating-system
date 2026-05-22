@@ -1,0 +1,159 @@
+﻿{
+  "learner_state_update_proposal": {
+    "learner_id": "default",
+    "generated_at": "2026-05-22",
+    "source_files_consulted": [
+      "learner-state/current_student_state.json",
+      "learner-state/artifact_registry.schema.json",
+      "learner-state/competency_progress.schema.json",
+      "modules/_module_index.md",
+      "rubrics/_rubric_index.md",
+      "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+      "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+    ],
+    "status_recommendation": {
+      "recommended_status": "revised",
+      "rationale": "The artifact has been revised and formally reviewed, and the review identifies strong portfolio signal. However, the review also states that the artifact is not yet implementation-ready because it lacks a concrete statistical analysis plan, randomization protocol, governance and privacy appendix, scoring protocol, inter-rater reliability standard, and formal DAG. Therefore revised is more accurate than portfolio_ready."
+    },
+    "artifact_registry_entry": {
+      "artifact_id": "AOS-COMB-001",
+      "title": "AI Writing Assistance and the Quality of Student Analytical Memos",
+      "type": "memo",
+      "path": "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+      "module_id": "03_07",
+      "module_name": "Causal Inference, Scientific Reasoning, and Identification; Data Engineering, Infrastructure, MLOps, and Production Systems",
+      "primary_competencies": [
+        "Causal Identification and Counterfactual Reasoning",
+        "Epistemic Infrastructure Design"
+      ],
+      "secondary_competencies": [
+        "Model Construction and Assumption Analysis",
+        "Synthesis, Communication, and Intellectual Production"
+      ],
+      "status": "revised",
+      "rubrics_used": [
+        "causal_reasoning_quality",
+        "assumption_awareness",
+        "technical_artifact_quality",
+        "synthesis_portfolio_quality"
+      ],
+      "created_at": "2026-05-21",
+      "updated_at": "2026-05-22",
+      "notes": "Reviewed as a strong combined causal identification and data-generating process memo. The artifact demonstrates advanced causal identification judgment and strong data-generating process awareness, but should add a statistical analysis plan, randomization protocol, privacy and governance appendix, scoring and rater reliability protocol, and formal DAG before being marked portfolio_ready.",
+      "rationale": "The revised artifact metadata identifies artifact ID AOS-COMB-001, title, modules 03 and 07, primary and secondary competencies, status as revised draft, and date 2026-05-21. The review dated 2026-05-22 evaluates it using causal reasoning and assumption-awareness rubrics, notes strong portfolio signal, and recommends registry inclusion. The type is normalized to memo because the artifact registry schema permits memo but not a custom combined_identification_and_data_generating_process_memo type."
+    },
+    "competency_progress_update_suggestions": {
+      "causal_identification_and_counterfactual_reasoning": {
+        "current_level": "emerging",
+        "recommended_level": "proficient",
+        "evidence_to_add": [
+          "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+          "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+        ],
+        "recommended_next_step": "Convert the AI writing assistant memo into an implementation-ready study protocol with a randomization plan, statistical analysis plan, formal DAG, and explicit estimator specification.",
+        "last_reviewed": "2026-05-22",
+        "rationale": "The review gives 4 out of 4 scores across causal question, counterfactual logic, identification strategy, assumption defense, threats to validity, and interpretation discipline. The artifact defines treatment, outcome, population, estimand, counterfactual, comparison strategy, assumptions, diagnostics, and interpretation limits with enough precision to justify movement from emerging to proficient."
+      },
+      "model_construction_and_assumption_analysis": {
+        "current_level": "developing",
+        "recommended_level": "proficient",
+        "evidence_to_add": [
+          "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+          "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+        ],
+        "recommended_next_step": "Add a formal model limitations appendix that distinguishes total effects, mediated pathways, measurement processes, post-treatment variables, and unsupported learning claims.",
+        "last_reviewed": "2026-05-22",
+        "rationale": "The artifact treats the research design as a controlled omission rather than a neutral measurement exercise. It explicitly identifies assumptions, links them to diagnostics and failure modes, warns against inappropriate post-treatment adjustment, and refuses overclaims about learning. This supports advancement from developing to proficient."
+      },
+      "epistemic_infrastructure_design": {
+        "current_level": "emerging",
+        "recommended_level": "developing",
+        "evidence_to_add": [
+          "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+          "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+        ],
+        "recommended_next_step": "Add governance, privacy, schema validation, linkage validation, retention, access-control, and measurement-pipeline implementation details for AI-use logs and rubric-scored memo outcomes.",
+        "last_reviewed": "2026-05-22",
+        "rationale": "The artifact provides strong design-level evidence that educational data are produced through source systems, logs, rubrics, evaluators, administrative categories, incentives, schemas, missingness, and instrumentation. The review notes that this could justify proficient if design memos are accepted as sufficient evidence, but recommends developing if the curriculum requires built implementation artifacts for proficiency. Because the current artifact is a memo rather than a working pipeline or implemented governance system, developing is the more conservative update."
+      },
+      "synthesis_communication_and_intellectual_production": {
+        "current_level": "developing",
+        "recommended_level": "developing",
+        "evidence_to_add": [
+          "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+          "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+        ],
+        "recommended_next_step": "Translate the memo into a portfolio case study with an executive summary, visual DAG, schema diagram, governance appendix, and interview-ready oral defense notes.",
+        "last_reviewed": "2026-05-22",
+        "rationale": "The artifact is coherent, interdisciplinary, and portfolio-facing, integrating causal inference, measurement validity, data infrastructure, AI governance, and educational assessment. However, the review recommends maintaining developing until the work is translated into a more polished portfolio case study with visual and executive-facing supports."
+      },
+      "responsible_sociotechnical_system_design": {
+        "current_level": "not_present_in_current_state",
+        "recommended_level": "emerging",
+        "evidence_to_add": [
+          "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+          "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+        ],
+        "recommended_next_step": "Create a dedicated governance appendix specifying consent language, data minimization, prompt-content handling, deidentification, retention limits, access controls, and boundaries between research use, grading use, and disciplinary use.",
+        "last_reviewed": "2026-05-22",
+        "rationale": "The artifact identifies ethical and institutional risks of AI-use logging, authorship substitution, assistive technology, and differential prompting skill. These are meaningful but not yet operationalized into a full responsible system design artifact. Adding this competency at emerging would capture early evidence without overstating mastery."
+      },
+      "experimental_and_measurement_systems_design": {
+        "current_level": "not_present_in_current_state",
+        "recommended_level": "emerging",
+        "evidence_to_add": [
+          "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+          "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md"
+        ],
+        "recommended_next_step": "Develop a measurement and experimentation protocol including the scoring rubric, rater training plan, inter-rater reliability threshold, adjudication rule, power analysis, attrition handling, and criterion-level outcome plan.",
+        "last_reviewed": "2026-05-22",
+        "rationale": "The memo contains substantial experimental and measurement reasoning through its randomized access design, criterion-level outcome discussion, blind scoring requirement, contamination checks, attrition analysis, and diagnostics. However, the review identifies the absence of a full statistical analysis plan, power analysis, and scoring protocol, so emerging is the appropriate initial level."
+      }
+    },
+    "next_step_recommendations": [
+      {
+        "priority": 1,
+        "next_step": "Add a concrete statistical analysis plan.",
+        "rationale": "The artifact specifies the estimand and design clearly, but the review states that it does not yet specify the estimator, model form, standard errors, clustering or repeated-measure handling, missing-data strategy, subgroup analysis rules, or multiple-comparison discipline."
+      },
+      {
+        "priority": 2,
+        "next_step": "Add a formal randomization and implementation protocol.",
+        "rationale": "The strongest causal design depends on correct implementation of randomized access. The next revision should specify blocking or stratification, allocation generation, allocation concealment, access activation, assignment audits, late adds, opt-outs, noncompliance, and crossovers."
+      },
+      {
+        "priority": 3,
+        "next_step": "Add a governance and privacy appendix for AI-use logs.",
+        "rationale": "The artifact recognizes that AI-use logs can contain sensitive academic, cognitive, and personal information, but the review notes that consent, minimization, retention, access control, deidentification, and allowed uses need operational detail."
+      },
+      {
+        "priority": 4,
+        "next_step": "Define the scoring rubric and rater reliability standard.",
+        "rationale": "Because final memo quality is produced through blind rubric scoring, the artifact needs the actual scoring instrument, rater training procedure, calibration examples, inter-rater reliability threshold, adjudication rule, and criterion-level score preservation plan."
+      },
+      {
+        "priority": 5,
+        "next_step": "Convert the text DAG into a formal DAG diagram or adjacency list.",
+        "rationale": "A formal DAG would make the identification argument more defensible by separating randomized assignment, actual use, baseline confounders of actual use, mediators, measurement nodes, and post-treatment variables that should not be adjusted for in the primary total-effect estimate."
+      },
+      {
+        "priority": 6,
+        "next_step": "Prepare a portfolio case study version.",
+        "rationale": "The review describes the artifact as having strong portfolio signal. A public-facing version should include an executive summary, audience framing, concise decision relevance, formal visuals, and a linked technical appendix."
+      }
+    ],
+    "recommended_active_modules_update": {
+      "keep_active_modules": [
+        "03_causal_inference",
+        "07_data_engineering_infrastructure"
+      ],
+      "consider_adding_active_modules": [
+        "13_responsible_ai_governance",
+        "20_experimental_design_metrics",
+        "12_technical_communication_portfolio"
+      ],
+      "rationale": "The artifact remains centered on modules 03 and 07, which are already active. The review's highest-leverage revisions now implicate responsible AI governance, experimental and measurement systems, and portfolio translation."
+    },
+    "overall_rationale": "The revised artifact substantially advances the learner's evidence base in causal identification, assumption analysis, and data-generating process reasoning. It is strong enough to register as a revised memo and to support competency updates, especially for causal identification. It should not yet be marked portfolio_ready because the review identifies concrete missing components needed for implementation readiness and public portfolio polish."
+  }
+}

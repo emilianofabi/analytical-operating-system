@@ -1,0 +1,143 @@
+﻿{
+  "proposal_type": "learner_state_update",
+  "generated_at": "2026-05-22",
+  "source_files_consulted": [
+    "learner-state/current_student_state.json",
+    "learner-state/artifact_registry.schema.json",
+    "learner-state/competency_progress.schema.json",
+    "modules/_module_index.md",
+    "rubrics/_rubric_index.md",
+    "modules/12_technical_communication_portfolio.md",
+    "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md",
+    "audits/semantic/ai_writing_assistant_memo_case_study.semantic_audit.md"
+  ],
+  "artifact_reviewed": {
+    "path": "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md",
+    "review_path": "audits/semantic/ai_writing_assistant_memo_case_study.semantic_audit.md",
+    "artifact_type": "portfolio_case_study",
+    "status_recommendation": "portfolio_ready",
+    "status_rationale": "The semantic audit judged the case study as PASS_WITH_MINOR_FIXES and ready for portfolio use after minor cleanup. The reviewed v2 artifact includes the explicit Project Title section, uses softened language about portfolio use, preserves strong evidence of claim-method-evidence fit, and demonstrates advanced synthesis across causal inference, data infrastructure, responsible AI governance, educational measurement, and technical communication. Because the remaining concern is only strict ASCII or BOM hygiene rather than substantive validity, the learner-state status can be recommended as portfolio_ready while noting a final formatting check."
+  },
+  "artifact_registry_entry": {
+    "artifact_id": "AOS-P12-001",
+    "title": "Evaluating Governed AI Writing Assistance: A Causal Identification and Data Infrastructure Case Study",
+    "type": "portfolio_case_study",
+    "path": "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md",
+    "module_id": "12",
+    "module_name": "Technical Communication, Portfolio Strategy, and Career Positioning",
+    "primary_competencies": [
+      "Synthesis, Communication, and Intellectual Production"
+    ],
+    "secondary_competencies": [
+      "Causal Identification and Counterfactual Reasoning",
+      "Epistemic Infrastructure Design",
+      "Model Construction and Assumption Analysis",
+      "Responsible Sociotechnical System Design"
+    ],
+    "status": "portfolio_ready",
+    "rubrics_used": [
+      "synthesis_portfolio_quality"
+    ],
+    "created_at": "2026-05-22",
+    "updated_at": "2026-05-22",
+    "notes": "Portfolio case study translating a technical causal identification and data infrastructure memo into a career-facing artifact. Semantic audit found strong portfolio value, advanced synthesis, clear claim-method-evidence alignment, and only minor formatting or claim-calibration issues. Recommended as portfolio_ready after final plain-ASCII and BOM check."
+  },
+  "artifact_registry_rationale": {
+    "artifact_id_rationale": "The existing registry uses module-coded IDs such as AOS-L03-001 and AOS-L07-001. AOS-P12-001 identifies this as the first portfolio-facing Module 12 artifact.",
+    "type_rationale": "The artifact follows the portfolio case study structure, includes project summary, problem, role, methods, workflow, evidence, decisions, limitations, competencies, resume bullets, and an interview story.",
+    "module_rationale": "Although the substantive work draws on Modules 03 and 07, the artifact being registered is a portfolio case study. The module index routes portfolio and technical communication work to Module 12.",
+    "competency_rationale": "The artifact primarily demonstrates synthesis and communication because it translates a complex technical memo into a portfolio-facing narrative. It secondarily demonstrates causal identification, infrastructure design, assumption analysis, and responsible sociotechnical judgment through the content of the case study.",
+    "status_rationale": "The audit found the artifact substantively valid and ready for portfolio use after minor fixes. The v2 artifact appears to have addressed the main structural and claim-calibration issues."
+  },
+  "competency_progress_update_suggestions": {
+    "synthesis_communication_and_intellectual_production": {
+      "current_level": "developing",
+      "recommended_level": "proficient",
+      "evidence_to_add": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md",
+        "audits/semantic/ai_writing_assistant_memo_case_study.semantic_audit.md"
+      ],
+      "recommended_next_step": "Prepare a concise portfolio landing-page summary and a 90-second oral defense version explaining what this artifact proves about analytical judgment.",
+      "last_reviewed": "2026-05-22",
+      "rationale": "The case study is a portfolio-facing artifact that successfully translates a complex causal and infrastructure memo into a structured professional narrative. The audit assessed central question, claim and argument, domain integration, method and evidence fit, communication clarity, limitations, and portfolio signal as advanced or proficient-to-advanced. This supports moving the competency from developing to proficient."
+    },
+    "causal_identification_and_counterfactual_reasoning": {
+      "current_level": "emerging",
+      "recommended_level": "developing",
+      "evidence_to_add": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md"
+      ],
+      "recommended_next_step": "Create a formal causal appendix with a DAG, randomization protocol, estimand table, and statistical analysis plan for the AI writing assistant evaluation.",
+      "last_reviewed": "2026-05-22",
+      "rationale": "The artifact defines treatment, outcome, population, estimand, counterfactual, randomized access design, randomized encouragement alternative, contamination risks, spillovers, and post-treatment adjustment risks. This is stronger than introductory exposure and supports movement from emerging to developing. Proficient is not yet recommended because the artifact remains a design memo and does not yet include a full DAG, power analysis, statistical analysis plan, or implemented empirical analysis."
+    },
+    "epistemic_infrastructure_design": {
+      "current_level": "emerging",
+      "recommended_level": "developing",
+      "evidence_to_add": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md"
+      ],
+      "recommended_next_step": "Convert the proposed measurement pipeline into a concrete data specification with tables, keys, version fields, missingness flags, access controls, and data quality checks.",
+      "last_reviewed": "2026-05-22",
+      "rationale": "The artifact treats educational data as produced through source systems, logs, disclosure forms, submissions, scoring platforms, evaluator behavior, schemas, versioning, and governance. It shows infrastructure judgment beyond a single lesson artifact. Developing is appropriate because the design is conceptually strong but has not yet been implemented as a working pipeline or validated data system."
+    },
+    "model_construction_and_assumption_analysis": {
+      "current_level": "developing",
+      "recommended_level": "developing",
+      "evidence_to_add": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md"
+      ],
+      "recommended_next_step": "Add a compact assumption-stress-test appendix that names each causal, measurement, and governance assumption, the diagnostic used to check it, and the interpretation change if it fails.",
+      "last_reviewed": "2026-05-22",
+      "rationale": "The artifact provides substantial assumption analysis, including randomization, treatment versioning, control contamination, spillovers, compliance, scoring validity, scoring reliability, missingness, and post-treatment adjustment. The current developing level remains appropriate because the artifact demonstrates disciplined assumption awareness, but advancement to proficient should wait for a more formal model critique or stress-test artifact."
+    },
+    "responsible_sociotechnical_system_design": {
+      "current_level": "not_present_in_current_state",
+      "recommended_level": "emerging",
+      "evidence_to_add": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md"
+      ],
+      "recommended_next_step": "Draft a governance appendix for the AI writing assistant study covering consent, privacy, data retention, deidentification, access control, acceptable use, assistive-technology equity, and authorship boundaries.",
+      "last_reviewed": "2026-05-22",
+      "rationale": "The current learner state does not list this competency, but the competency schema includes responsible_sociotechnical_system_design. The artifact identifies privacy, consent, monitoring, authorship substitution, platform policy, fairness, and the distinction between product usefulness and pedagogical appropriateness. Emerging is appropriate because these concerns are present and well framed, while a dedicated governance artifact is still needed for stronger evidence."
+    },
+    "experimental_and_measurement_systems_design": {
+      "current_level": "not_present_in_current_state",
+      "recommended_level": "emerging",
+      "evidence_to_add": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study_v2.md"
+      ],
+      "recommended_next_step": "Specify the scoring rubric, rater training plan, inter-rater reliability threshold, blind scoring workflow, and criterion-level outcome analysis plan.",
+      "last_reviewed": "2026-05-22",
+      "rationale": "The competency schema includes experimental_and_measurement_systems_design, and the artifact directly addresses randomized access, randomized encouragement, outcome construction, blind rubric scoring, criterion-level subscores, rater reliability, and measurement validity. Emerging is recommended because the artifact shows strong conceptual measurement judgment but does not yet include a fully operational scoring protocol."
+    }
+  },
+  "next_step_recommendations": [
+    {
+      "priority": 1,
+      "next_step": "Run a final formatting hygiene check on the v2 case study to remove any UTF-8 BOM and verify strict plain ASCII if the repository requires ASCII-only portfolio artifacts.",
+      "rationale": "The semantic audit flagged a possible BOM and the user requested plain ASCII output. This is a low-effort final readiness check that protects portability without changing the substance."
+    },
+    {
+      "priority": 2,
+      "next_step": "Add the proposed artifact registry entry to learner state after user approval.",
+      "rationale": "The artifact is a valid portfolio case study with a clear module, status, rubric, and competency mapping. Registry inclusion will make it visible as evidence for future pathway and portfolio planning."
+    },
+    {
+      "priority": 3,
+      "next_step": "Create a formal technical appendix for the underlying AI writing assistant evaluation design.",
+      "rationale": "The portfolio case study is strong, but the next competency gain requires converting conceptual design into more formal research machinery: DAG, randomization protocol, estimand table, power analysis, scoring plan, and statistical analysis plan."
+    },
+    {
+      "priority": 4,
+      "next_step": "Create a governance appendix for privacy, consent, deidentification, retention, access control, disclosure, and authorship boundaries.",
+      "rationale": "The artifact already identifies responsible AI and educational governance issues. A dedicated appendix would provide stronger evidence for responsible_sociotechnical_system_design."
+    },
+    {
+      "priority": 5,
+      "next_step": "Prepare a portfolio landing-page blurb, resume bullet selection, and interview answer from the case study.",
+      "rationale": "The artifact already contains strong resume bullets and an interview story. Translating them into shorter external-facing versions will complete the Module 12 portfolio communication loop."
+    }
+  ],
+  "overall_rationale": "The revised case study is a high-signal portfolio artifact. It demonstrates that the learner can translate an underspecified AI impact question into a disciplined research design with explicit treatment, outcome, estimand, counterfactual, assumptions, data-generating process, measurement pipeline, and limitations. The audit supports advanced synthesis and portfolio value, while the remaining limitations point to specific next artifacts rather than blocking portfolio use."
+}

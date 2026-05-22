@@ -1,0 +1,102 @@
+﻿{
+  "learner_id": "default",
+  "name": "Madelyn",
+  "current_tier": "Foundational",
+  "active_modules": [
+    "03_causal_inference",
+    "07_data_engineering_infrastructure"
+  ],
+  "preferred_style": {
+    "depth": "doctorate",
+    "tone": "academic",
+    "math": "include_when_useful",
+    "code": "include_when_useful",
+    "format": "lesson"
+  },
+  "goals": {
+    "professional": [
+      "Use the curriculum for interview preparation and portfolio development.",
+      "Develop high-signal technical artifacts around AI, data engineering, causal inference, and product analytics."
+    ],
+    "academic": [
+      "Use the curriculum architecture for research proposals, capstone work, and interdisciplinary writing."
+    ],
+    "portfolio": [
+      "Create module-tagged artifacts that demonstrate analytical judgment.",
+      "Translate technical projects into case studies, READMEs, and interview stories."
+    ],
+    "capstone": [
+      "Develop an integrative project connecting AI systems, labor/policy, causal inference, and infrastructure."
+    ]
+  },
+  "competency_progress": {
+    "model_construction_and_assumption_analysis": {
+      "level": "developing",
+      "evidence": [],
+      "next_step": "Produce a model critique memo using the assumption-awareness rubric.",
+      "last_reviewed": ""
+    },
+    "causal_identification_and_counterfactual_reasoning": {
+      "level": "emerging",
+      "evidence": [
+        "artifacts/lessons/03_causal_inference/lesson_01_fundamental_problem.md"
+      ],
+      "next_step": "Create an identification memo defining treatment, outcome, population, estimand, and assumptions.",
+      "last_reviewed": ""
+    },
+    "epistemic_infrastructure_design": {
+      "level": "emerging",
+      "evidence": [
+        "artifacts/lessons/07_data_engineering_infrastructure/lesson_01_data_is_produced_not_found.md"
+      ],
+      "next_step": "Create a data-generating process memo and data pipeline review using the template.",
+      "last_reviewed": ""
+    },
+    "synthesis_communication_and_intellectual_production": {
+      "level": "developing",
+      "evidence": [],
+      "next_step": "Create a portfolio case study template for the first generated artifact.",
+      "last_reviewed": ""
+    }
+  },
+  "artifact_registry": [
+    {
+      "artifact_id": "AOS-L03-001",
+      "title": "The Fundamental Problem of Causal Inference",
+      "type": "lesson",
+      "path": "artifacts/lessons/03_causal_inference/lesson_01_fundamental_problem.md",
+      "module_id": "03",
+      "module_name": "Causal Inference, Scientific Reasoning, and Identification",
+      "primary_competencies": [
+        "Causal Identification and Counterfactual Reasoning"
+      ],
+      "secondary_competencies": [
+        "Model Construction and Assumption Analysis"
+      ],
+      "status": "draft",
+      "rubrics_used": [],
+      "created_at": "",
+      "updated_at": "",
+      "notes": "Generated as initial lesson artifact."
+    },
+    {
+      "artifact_id": "AOS-L07-001",
+      "title": "Data Is Produced, Not Found",
+      "type": "lesson",
+      "path": "artifacts/lessons/07_data_engineering_infrastructure/lesson_01_data_is_produced_not_found.md",
+      "module_id": "07",
+      "module_name": "Data Engineering, Infrastructure, MLOps, and Production Systems",
+      "primary_competencies": [
+        "Epistemic Infrastructure Design"
+      ],
+      "secondary_competencies": [
+        "Assumption-Awareness in Technical Work"
+      ],
+      "status": "draft",
+      "rubrics_used": [],
+      "created_at": "",
+      "updated_at": "",
+      "notes": "Generated as initial lesson artifact."
+    }
+  ]
+}

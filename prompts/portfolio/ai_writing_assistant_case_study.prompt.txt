@@ -1,0 +1,27 @@
+Use the curriculum-orchestrator skill.
+
+Consult:
+- templates/portfolio/portfolio_case_study_template.md
+- rubrics/synthesis_portfolio_quality.md
+- learner-state/current_student_state.json
+- modules/03_causal_inference.md
+- modules/07_data_engineering_infrastructure.md
+
+Artifact:
+artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md
+
+Review:
+artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md
+
+Task:
+Translate this artifact into a portfolio case study.
+
+Requirements:
+- Output clean Markdown only.
+- Use plain ASCII only.
+- Follow the portfolio case study template.
+- Explain the project as evidence of analytical judgment.
+- Include a resume bullet section.
+- Include an interview story version.
+- Include competencies demonstrated.
+- Include limitations honestly.

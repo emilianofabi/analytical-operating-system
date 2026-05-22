@@ -1,0 +1,64 @@
+﻿{
+  "competencies": {
+    "model_construction_and_assumption_analysis": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "mathematical_and_computational_formalization": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "statistical_inference_and_uncertainty_quantification": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "causal_identification_and_counterfactual_reasoning": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "predictive_modeling_and_learning_systems_evaluation": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "epistemic_infrastructure_design": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "experimental_and_measurement_systems_design": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "institutional_market_and_policy_judgment": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "responsible_sociotechnical_system_design": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    },
+    "synthesis_communication_and_intellectual_production": {
+      "level": "not_started | emerging | developing | proficient | advanced",
+      "evidence": [],
+      "next_step": "string",
+      "last_reviewed": "YYYY-MM-DD"
+    }
+  }
+}

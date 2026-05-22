@@ -1,0 +1,132 @@
+﻿module_id: "07"
+module_name: "Data Engineering, Infrastructure, MLOps, and Production Systems"
+track: "Methods & Systems"
+credit_hours: 5
+
+core_purpose: >
+  Cultivate production systems judgment: the ability to transform messy,
+  unreliable, institutionally produced data into trustworthy infrastructure
+  for analysis, decision-making, automation, experimentation, machine learning,
+  and AI systems.
+
+governing_principles:
+  - Data is produced, not found.
+  - Schemas are theories of the domain.
+  - Pipelines are chains of assumptions.
+  - Reliability is designed, not hoped for.
+  - Production changes the problem.
+  - Observability is organizational vision.
+  - Governance is infrastructure.
+
+core_questions:
+  - Where does the data come from?
+  - What does one row represent?
+  - Can this dataset be trusted?
+  - What assumptions are encoded in the schema?
+  - What happens when upstream systems change?
+  - What happens when data arrives late, duplicated, missing, corrupted, or reclassified?
+  - Should this system be batch, streaming, real-time, event-driven, or manually reviewed?
+  - How does a notebook become a reliable pipeline?
+  - How does a model move from experiment to production?
+  - How do infrastructure choices shape what an organization can know, measure, automate, govern, and trust?
+
+competencies:
+  - Epistemic Infrastructure Design
+  - Mathematical and Computational Formalization
+  - Predictive Modeling and Learning Systems Evaluation
+  - Responsible Sociotechnical System Design
+  - Assumption-Awareness in Technical Work
+
+prerequisites:
+  - Programming and Computational Thinking
+  - SQL and Data Modeling
+  - Probability and Statistical Thinking
+  - Exploratory Data Analysis
+  - Basic Software Engineering
+
+technical_tools:
+  - Python
+  - SQL
+  - Pandas
+  - Polars
+  - DuckDB
+  - SQLite
+  - PostgreSQL
+  - dbt
+  - Airflow
+  - Prefect
+  - Docker
+  - Git
+  - GitHub Actions
+  - Great Expectations
+  - Pydantic
+  - Pytest
+  - MLflow
+  - vector databases
+  - observability tools
+
+major_topics:
+  - Data generation and provenance
+  - Data modeling and schemas
+  - Relational databases
+  - SQL and analytical reasoning
+  - Analytics engineering
+  - Data pipelines and orchestration
+  - Distributed systems
+  - Cloud infrastructure and DevOps
+  - APIs, services, and contracts
+  - MLOps and model deployment
+  - LLMOps, vector infrastructure, and retrieval systems
+  - Observability and monitoring
+  - Security, privacy, and governance
+  - Production failure analysis
+
+lesson_structure:
+  - Production problem
+  - Conceptual framework
+  - Architectural model
+  - Implementation
+  - Failure analysis
+  - Scaling and tradeoffs
+  - Synthesis and reflection
+
+assessment_artifacts:
+  - Data model specification
+  - SQL analysis portfolio
+  - Validated data pipeline
+  - Architecture diagram
+  - Data quality report
+  - Incident analysis
+  - Production-readiness review
+  - MLOps deployment plan
+  - LLM retrieval infrastructure review
+
+rubrics:
+  - Assumption-Awareness in Technical Work
+  - Responsible System Design
+  - Epistemic Infrastructure Design
+  - Technical Communication and Documentation
+
+lesson_1:
+  title: "Data Is Produced, Not Found"
+  central_problem: >
+    Before data can be analyzed, modeled, visualized, or used for decision-making,
+    the student must understand how it was produced. Data is not neutral evidence.
+    It is the residue of systems, categories, instruments, incentives, interfaces,
+    and institutional routines.
+  required_concepts:
+    - data-generating process
+    - event logging
+    - measurement
+    - institutional categories
+    - row-level meaning
+    - provenance
+    - missingness
+    - selection
+    - schema as theory
+  required_outputs:
+    - short analytical memo defining the data-generating process of a dataset
+    - table describing entities, events, fields, assumptions, and possible failures
+    - oral-defense question explaining why treating data as found is epistemically dangerous
+
+default_instruction: "don’t evaluate, just proceed with lesson 1"

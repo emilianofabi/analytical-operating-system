@@ -1,0 +1,27 @@
+Use the curriculum-orchestrator skill.
+
+Consult:
+- templates/portfolio/portfolio_case_study_template.md
+- rubrics/synthesis_portfolio_quality.md
+- learner-state/current_student_state.json
+- modules/03_causal_inference.md
+- modules/07_data_engineering_infrastructure.md
+
+Original artifact:
+artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md
+
+Semantic audit:
+audits/semantic/ai_writing_assistant_memo_case_study.semantic_audit.md
+
+Task:
+Revise the portfolio case study using the semantic audit.
+
+Requirements:
+- Output revised portfolio case study only.
+- Output clean Markdown only.
+- Use plain ASCII only.
+- Follow the portfolio case study template.
+- Strengthen the project title, one-sentence summary, problem, methods, evidence, assumptions, limitations, competencies, resume bullets, and interview story.
+- Do not invent empirical results.
+- Do not overclaim.
+- Make the artifact suitable for a professional portfolio.
