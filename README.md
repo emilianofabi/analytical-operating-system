@@ -411,5 +411,3 @@ It treats artifacts as evidence.
 It treats assessment as a feedback system.
 
 It treats Hermes as an orchestration layer for disciplined intellectual production.
-
-````
