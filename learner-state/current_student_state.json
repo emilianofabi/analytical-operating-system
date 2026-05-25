@@ -1,10 +1,11 @@
-﻿{
+{
   "learner_id": "default",
   "name": "Madelyn",
   "current_tier": "Foundational",
   "active_modules": [
     "03_causal_inference",
-    "07_data_engineering_infrastructure"
+    "07_data_engineering_infrastructure",
+    "12_technical_communication_portfolio"
   ],
   "preferred_style": {
     "depth": "doctorate",
@@ -31,32 +32,44 @@
   },
   "competency_progress": {
     "model_construction_and_assumption_analysis": {
-      "level": "developing",
-      "evidence": [],
-      "next_step": "Produce a model critique memo using the assumption-awareness rubric.",
-      "last_reviewed": ""
+      "level": "proficient",
+      "evidence": [
+        "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+        "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md",
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md"
+      ],
+      "next_step": "Add a formal model limitations appendix that distinguishes total effects, mediated pathways, measurement processes, post-treatment variables, and unsupported learning claims.",
+      "last_reviewed": "2026-05-25"
     },
     "causal_identification_and_counterfactual_reasoning": {
-      "level": "emerging",
+      "level": "proficient",
       "evidence": [
-        "artifacts/lessons/03_causal_inference/lesson_01_fundamental_problem.md"
+        "artifacts/lessons/03_causal_inference/lesson_01_fundamental_problem.md",
+        "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+        "artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md",
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md"
       ],
-      "next_step": "Create an identification memo defining treatment, outcome, population, estimand, and assumptions.",
-      "last_reviewed": ""
+      "next_step": "Add a formal DAG and statistical analysis plan to convert the design memo into an implementation-ready study protocol.",
+      "last_reviewed": "2026-05-25"
     },
     "epistemic_infrastructure_design": {
-      "level": "emerging",
+      "level": "developing",
       "evidence": [
-        "artifacts/lessons/07_data_engineering_infrastructure/lesson_01_data_is_produced_not_found.md"
+        "artifacts/lessons/07_data_engineering_infrastructure/lesson_01_data_is_produced_not_found.md",
+        "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md"
       ],
-      "next_step": "Create a data-generating process memo and data pipeline review using the template.",
-      "last_reviewed": ""
+      "next_step": "Add governance, privacy, schema validation, linkage validation, retention, access-control, and measurement-pipeline implementation details for AI-use logs and rubric-scored memo outcomes.",
+      "last_reviewed": "2026-05-25"
     },
     "synthesis_communication_and_intellectual_production": {
-      "level": "developing",
-      "evidence": [],
-      "next_step": "Create a portfolio case study template for the first generated artifact.",
-      "last_reviewed": ""
+      "level": "proficient",
+      "evidence": [
+        "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md",
+        "audits/semantic/ai_writing_assistant_memo_case_study.repair_audit_2026-05-25.md"
+      ],
+      "next_step": "Prepare an executive summary and visual appendix for public-facing portfolio presentation.",
+      "last_reviewed": "2026-05-25"
     }
   },
   "artifact_registry": [
@@ -97,6 +110,56 @@
       "created_at": "",
       "updated_at": "",
       "notes": "Generated as initial lesson artifact."
+    },
+    {
+      "artifact_id": "AOS-COMB-001",
+      "title": "AI Writing Assistance and the Quality of Student Analytical Memos",
+      "type": "memo",
+      "path": "artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md",
+      "module_id": "03_07",
+      "module_name": "Causal Inference, Scientific Reasoning, and Identification; Data Engineering, Infrastructure, MLOps, and Production Systems",
+      "primary_competencies": [
+        "Causal Identification and Counterfactual Reasoning",
+        "Epistemic Infrastructure Design"
+      ],
+      "secondary_competencies": [
+        "Model Construction and Assumption Analysis",
+        "Synthesis, Communication, and Intellectual Production"
+      ],
+      "status": "revised",
+      "rubrics_used": [
+        "causal_reasoning_quality",
+        "assumption_awareness"
+      ],
+      "created_at": "2026-05-21",
+      "updated_at": "2026-05-25",
+      "notes": "Revised and reviewed as a combined causal identification and data-generating process memo. The portfolio case study translation passed semantic repair audit. Next implementation steps are formal DAG, statistical analysis plan, randomization protocol, scoring rubric, and governance appendix."
+    },
+    {
+      "artifact_id": "AOS-PORT-001",
+      "title": "Evaluating AI Writing Assistance: A Causal Identification and Data Infrastructure Case Study",
+      "type": "portfolio_case_study",
+      "path": "artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md",
+      "module_id": "03_07_12",
+      "module_name": "Causal Inference; Data Engineering and Infrastructure; Technical Communication and Portfolio",
+      "primary_competencies": [
+        "Synthesis, Communication, and Intellectual Production",
+        "Causal Identification and Counterfactual Reasoning"
+      ],
+      "secondary_competencies": [
+        "Epistemic Infrastructure Design",
+        "Model Construction and Assumption Analysis",
+        "Responsible Sociotechnical System Design"
+      ],
+      "status": "portfolio_ready",
+      "rubrics_used": [
+        "synthesis_portfolio_quality",
+        "causal_reasoning_quality",
+        "assumption_awareness"
+      ],
+      "created_at": "2026-05-22",
+      "updated_at": "2026-05-25",
+      "notes": "Portfolio translation repaired for template compliance, BOM removal, and claim calibration. Semantic audit path: audits/semantic/ai_writing_assistant_memo_case_study.repair_audit_2026-05-25.md."
     }
   ]
 }

@@ -1,4 +1,8 @@
-﻿# Evaluating AI Writing Assistance: A Causal Identification and Data Infrastructure Case Study
+# Portfolio Case Study
+
+## Project Title
+
+Evaluating AI Writing Assistance: A Causal Identification and Data Infrastructure Case Study
 
 ## One-Sentence Summary
 
@@ -283,7 +287,7 @@ Implementation limitations:
 
 ## Results or Outputs
 
-The project produced a portfolio-ready technical research design memo that demonstrates how to evaluate AI writing assistance without overclaiming.
+The project produced a technical research design memo intended for portfolio use that demonstrates how to evaluate AI writing assistance without overclaiming.
 
 Primary outputs:
 
@@ -400,7 +404,7 @@ I also built out the data-generating process. I traced how the evidence would be
 
 Result:
 
-The final artifact became a combined causal identification and data infrastructure memo. It showed how to evaluate AI writing support without making unsupported claims. The review found that it had strong portfolio signal because it integrated causal inference, AI governance, measurement validity, learning analytics, and data infrastructure.
+The final artifact became a combined causal identification and data infrastructure memo. It showed how to evaluate AI writing support without making unsupported claims. The accompanying review judged it to have strong portfolio signal because it integrated causal inference, AI governance, measurement validity, learning analytics, and data infrastructure.
 
 Reflection:
 
