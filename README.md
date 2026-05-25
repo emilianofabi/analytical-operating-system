@@ -123,6 +123,7 @@ analytical-operating-system/
 |   `-- state_updates/
 |
 |-- ops/
+|   |-- aos.ps1
 |   |-- lesson.ps1
 |   |-- project-output.ps1
 |   |-- review-artifact.ps1
@@ -215,50 +216,29 @@ Optional parallel audit skill:
 curriculum-auditor
 ```
 
-Recommended invocation:
+Preferred scripted artifact generation uses the universal runner in `ops/aos.ps1`.
+
+## Preferred Workflow
+
+The preferred workflow uses `ops/aos.ps1` as the universal runner.
+
+1. Create or reuse a prompt file in `prompts/`.
+2. Run `ops/aos.ps1` with a prompt file and output path.
+3. Let the local audit check the generated output.
+4. Review clean artifacts in `artifacts/`.
+5. Commit only clean outputs.
+
+Example:
 
 ```powershell
-hermes --skills curriculum-orchestrator chat
+.\ops\aos.ps1 -PromptFile ".\prompts\portfolio\ai_writing_assistant_case_study.prompt.txt" -OutFile ".\artifacts\portfolio\case_studies\ai_writing_assistant_memo_case_study.md" -ExpectedType "markdown" -Force
 ```
 
-For scripted artifact generation, use the scripts in `ops/`.
+Rules:
 
-## Workflow Examples
-
-### Generate a Lesson
-
-```powershell
-.\ops\lesson.ps1 `
-  -ModuleFile "07_data_engineering_infrastructure.md" `
-  -Lesson "Lesson 1: Data Is Produced, Not Found" `
-  -OutFile ".\artifacts\lessons\07_data_engineering_infrastructure\lesson_01_data_is_produced_not_found.md"
-```
-
-### Review an Artifact
-
-```powershell
-.\ops\review-artifact.ps1 `
-  -ArtifactFile ".\artifacts\projects\combined_identification_data_memos\revised\ai_writing_assistant_memo_v2.md" `
-  -RubricFiles "rubrics/assumption_awareness.md and rubrics/causal_reasoning_quality.md" `
-  -OutFile ".\artifacts\reviews\combined_identification_data_memos\ai_writing_assistant_memo_v2_review.md"
-```
-
-### Generate a Portfolio Case Study Safely
-
-```powershell
-.\ops\hermes-safe-run.ps1 `
-  -PromptFile ".\prompts\portfolio\ai_writing_assistant_case_study.prompt.txt" `
-  -OutFile ".\artifacts\portfolio\case_studies\ai_writing_assistant_memo_case_study.md" `
-  -ExpectedType "markdown"
-```
-
-### Audit an Artifact
-
-```powershell
-.\ops\audit-artifact.ps1 `
-  -ArtifactFile ".\artifacts\portfolio\case_studies\ai_writing_assistant_memo_case_study.md" `
-  -ExpectedType "markdown"
-```
+- Prefer prompt files over long inline prompts.
+- Use `ops/aos.ps1` before legacy scripts.
+- Do not commit test artifacts, logs, quarantine files, or broken Hermes outputs.
 
 ## Self-Healing Audit Layer
 
