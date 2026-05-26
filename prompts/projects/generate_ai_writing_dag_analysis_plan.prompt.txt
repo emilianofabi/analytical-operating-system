@@ -1,0 +1,32 @@
+Use the curriculum-orchestrator skill.
+
+Consult:
+- templates/projects/formal_dag_statistical_analysis_plan_template.md
+- artifacts/portfolio/case_studies/ai_writing_assistant_memo_case_study.md
+- artifacts/projects/combined_identification_data_memos/revised/ai_writing_assistant_memo_v2.md
+- artifacts/reviews/combined_identification_data_memos/ai_writing_assistant_memo_v2_review.md
+- rubrics/causal_reasoning_quality.md
+- rubrics/assumption_awareness.md
+- learner-state/current_student_state.json
+
+Task:
+Create a Formal DAG and Statistical Analysis Plan for the study question:
+Does using an AI writing assistant improve the quality of student analytical memos?
+
+Requirements:
+- Output Markdown only.
+- Use plain ASCII only.
+- Follow the template.
+- Define treatment, outcome, population, comparison group, time horizon, and estimand.
+- Include textual DAG nodes and directed edges.
+- Identify confounders, mediators, colliders, and a proposed adjustment set.
+- State identification assumptions.
+- Propose a statistical analysis plan.
+- Include robustness checks and sensitivity checks.
+- Include limitations and interpretation boundaries.
+- Do not invent empirical results.
+- Do not overclaim.
+- Do not include terminal logs or Hermes CLI messages.
+
+Suggested output path:
+artifacts/projects/ai_writing_assistance/formal_dag_statistical_analysis_plan.md

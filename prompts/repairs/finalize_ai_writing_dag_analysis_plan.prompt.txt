@@ -1,0 +1,58 @@
+Use the curriculum-orchestrator skill.
+
+Task:
+Finalize the Formal DAG and Statistical Analysis Plan artifact.
+
+Input artifact:
+artifacts/projects/ai_writing_assistance/formal_dag_statistical_analysis_plan.md
+
+Relevant review:
+artifacts/reviews/ai_writing_assistance/formal_dag_statistical_analysis_plan_review.md
+
+Consult:
+- templates/projects/formal_dag_statistical_analysis_plan_template.md
+- rubrics/causal_reasoning_quality.md
+- rubrics/assumption_awareness.md
+- learner-state/current_student_state.json
+
+Output goal:
+Create a polished final revised version of the artifact. Preserve useful content, but integrate the recent simplified causal spine cleanly into the full document.
+
+Core causal spine to foreground:
+- Z = offered or assigned access to the AI writing assistant.
+- D = actual AI use.
+- Y = final memo quality.
+- Primary causal target: Z -> Y.
+- Secondary causal question: D -> Y.
+- ITT/offered-access effect is the primary estimand.
+- Actual-use effect is secondary and exploratory because D is selected post-assignment behavior.
+
+Required revisions:
+1. Remove any loose fragment formatting, duplicated headings, or literal "text" labels.
+2. Use clean Markdown headings.
+3. Put formulas in fenced code blocks or inline code where appropriate.
+4. Define the ITT estimand clearly:
+   E[Y_i(Z_i = 1) - Y_i(Z_i = 0)]
+5. Explain in plain English that this is the effect of being offered governed AI access, not the effect of actual AI use.
+6. Define the actual-use estimand clearly:
+   E[Y_i(D_i = 1) - Y_i(D_i = 0)]
+7. Explain that actual-use analysis is secondary because actual use is shaped by baseline skill, motivation, AI familiarity, outside support, time availability, and unmeasured traits.
+8. Separate the statistical analysis plan into:
+   - Primary ITT analysis
+   - Secondary mechanism and compliance analyses
+   - Exploratory actual-use analysis
+9. Keep the primary ITT model:
+   Y_i = alpha + beta Z_i + gamma'X_i + delta_s + epsilon_i
+10. Explain beta in plain English as the estimated effect of offered access.
+11. Clearly warn not to control for post-treatment variables in the ITT model, including actual AI use, prompt count, use intensity, revision behavior, disclosure content, post-treatment confidence, valid submission status without sensitivity analysis, and rater suspicion.
+12. Preserve the DAG nodes and edges if they are useful, but make the document easier to read.
+13. Do not invent empirical results.
+14. Do not overclaim causal identification for D -> Y.
+15. End with a short "Revision Note" summarizing what changed.
+
+Output requirements:
+- Output the revised artifact only.
+- Output clean Markdown only.
+- Use plain ASCII only.
+- Do not include terminal logs.
+- Do not include Hermes CLI messages.
