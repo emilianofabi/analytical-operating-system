@@ -12,19 +12,6 @@ Modern analytical competence is not reducible to coding, statistics, economics, 
 
 This project operationalizes that thesis as a local curriculum system. Hermes functions as the orchestration layer. The repository contains the curriculum source of truth: modules, rubrics, templates, learner state, project artifacts, audits, and governance files.
 
-## Core Principles
-
-1. Purpose before technique.
-2. Identification before estimation.
-3. Models are controlled omissions.
-4. Data is produced, not found.
-5. Metrics are proxies, not values.
-6. Prediction is not explanation.
-7. Infrastructure is epistemic.
-8. Systems are sociotechnical.
-9. Responsible design requires governance.
-10. Synthesis requires visible artifacts.
-
 ## What This System Does
 
 This repository supports a full learning and production loop:
@@ -38,98 +25,69 @@ module card
   -> semantic audit
   -> learner-state update
   -> portfolio translation
-````
+```
 
 The goal is not simply to generate lessons. The goal is to produce evidence-bearing artifacts that demonstrate analytical judgment.
+
+## Strategic Uses
+
+This system translates abstract learning into concrete outcomes:
+* **Technical Interviews:** Structure answers using `claim -> method -> evidence -> assumptions -> limitations -> failure modes`.
+* **Product and AI Strategy:** Reason rigorously about user problems, AI suitability, model reliability, and deployment risk.
+* **Research and Academic Advancement:** Develop research questions, methods sections, and literature-linked arguments.
+* **Portfolio Development:** Demonstrate competencies through case studies, technical READMEs, notebooks, and memos.
+
+## Core Principles
+
+1. Purpose before technique.
+2. Identification before estimation.
+3. Models are controlled omissions.
+4. Data is produced, not found.
+5. Metrics are proxies, not values.
+6. Prediction is not explanation.
+7. Infrastructure is epistemic.
+8. Systems are sociotechnical.
+9. Responsible design requires governance.
+10. Synthesis requires visible artifacts.
 
 ## Repository Structure
 
 ```text
 analytical-operating-system/
-|
-|-- curriculum/
-|   |-- pathways/
-|   |   `-- dependency_graph.md
-|   `-- cross_module_synthesis_protocol.md
-|
-|-- modules/
-|   |-- _module_index.md
-|   |-- 01_economic_reasoning.md
-|   |-- 02_probability_statistics.md
-|   |-- 03_causal_inference.md
-|   |-- 04_machine_learning.md
-|   |-- 05_ai_product_strategy.md
-|   |-- 06_philosophy_critical_analysis.md
-|   |-- 07_data_engineering_infrastructure.md
-|   |-- 08_quantitative_finance.md
-|   |-- 09_mathematics.md
-|   |-- 10_programming.md
-|   |-- 11_research_methods.md
-|   |-- 12_technical_communication_portfolio.md
-|   |-- 13_responsible_ai_governance.md
-|   |-- 14_decision_theory_optimization.md
-|   |-- 15_complex_systems.md
-|   |-- 16_macroeconomics_political_economy.md
-|   |-- 17_llms_agents_rag.md
-|   |-- 18_behavioral_economics.md
-|   |-- 19_data_visualization_eda.md
-|   |-- 20_experimental_design_metrics.md
-|   |-- 21_industrial_organization_platforms.md
-|   |-- 22_labor_education_human_capital.md
-|   |-- 23_public_policy_governance.md
-|   |-- 24_entrepreneurship_venture_strategy.md
-|   `-- 25_capstone_integration.md
-|
-|-- rubrics/
-|   |-- _rubric_index.md
-|   |-- assumption_awareness.md
-|   |-- causal_reasoning_quality.md
-|   |-- institutional_analysis_depth.md
-|   |-- responsible_system_design.md
-|   |-- technical_artifact_quality.md
-|   `-- synthesis_portfolio_quality.md
-|
-|-- templates/
-|   |-- lesson_template.md
-|   |-- projects/
-|   |-- reviews/
-|   `-- portfolio/
-|
-|-- learner-state/
-|   |-- current_student_state.json
-|   |-- learner_profile.schema.json
-|   |-- competency_progress.schema.json
-|   `-- artifact_registry.schema.json
-|
-|-- artifacts/
-|   |-- lessons/
-|   |-- projects/
-|   |-- reviews/
-|   |-- portfolio/
-|   |-- capstones/
-|   `-- generated/
-|
-|-- audits/
-|   |-- reports/
-|   |-- semantic/
-|   |-- quarantine/
-|   `-- logs/
-|
-|-- prompts/
-|   |-- portfolio/
-|   |-- projects/
-|   |-- reviews/
-|   |-- repairs/
-|   `-- state_updates/
-|
-|-- ops/
-|   |-- aos.ps1              # Preferred runner
-|   `-- legacy/              # Superseded historical/reference scripts
-|
-`-- governance/
-    |-- CHANGELOG.md
-    `-- CONTRIBUTING.md
+|-- artifacts/      # Stores generated lessons, projects, reviews, and portfolio materials.
+|-- audits/         # Maintains logs, semantic reviews, and quarantine areas for broken outputs.
+|-- curriculum/     # Defines learning pathways, sequencing, and cross-module synthesis protocols.
+|-- governance/     # Manages system changelogs and contribution guidelines.
+|-- learner-state/  # Tracks competency progress, profiles, and artifact registries via JSON schemas.
+|-- modules/        # Contains the 25 core curriculum module cards and routing logic.
+|-- ops/            # Contains operational scripts, including the primary aos.ps1 runner.
+|-- prompts/        # Holds the text prompts used to drive the Hermes generation and review loops.
+|-- rubrics/        # Defines the assessment criteria for evaluating artifacts and competencies.
+`-- templates/      # Provides structural scaffolding for lessons, projects, and portfolio items.
 ```
+
+## Quick Start & Workflow
+
+**Prerequisites:** You must have [Hermes](https://hermes-agent.nousresearch.com/) installed and configured. Hermes acts as the AI agent and runtime for this system.
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd analytical-operating-system
+   ```
+2. **Confirm Hermes is operational:**
+   ```bash
+   hermes --version
+   ```
+3. **Run your first AOS loop:**
+   While you can run Hermes directly when useful, the preferred local workflow uses `ops/aos.ps1`. This runner invokes Hermes with specific prompt files and output paths to ensure structured artifact generation.
+   
+   ```powershell
+   # Example: Generate a case study using a predefined prompt
+   .\ops\aos.ps1 -PromptFile ".\prompts\portfolio\ai_writing_assistant_case_study.prompt.txt" -OutFile ".\artifacts\portfolio\case_studies\ai_writing_assistant_memo_case_study.md" -ExpectedType "markdown" -Force
+   ```
+4. **Audit and Commit:**
+   Let the local audit check the generated output in `artifacts/`, then commit only clean, verified artifacts. Do not commit test artifacts, logs, quarantine files, or broken outputs.
 
 ## Curriculum Architecture
 
@@ -192,46 +150,6 @@ The curriculum tracks progress across ten core competencies:
 
 Each module is mapped to competencies, artifacts, rubrics, and prerequisite dependencies.
 
-## Hermes Integration
-
-Hermes is used as the curriculum orchestration layer.
-
-Primary local skill:
-
-```text
-curriculum-orchestrator
-```
-
-Optional parallel audit skill:
-
-```text
-curriculum-auditor
-```
-
-Preferred scripted artifact generation uses the universal runner in `ops/aos.ps1`.
-
-## Preferred Workflow
-
-The preferred workflow uses `ops/aos.ps1` as the universal runner.
-
-1. Create or reuse a prompt file in `prompts/`.
-2. Run `ops/aos.ps1` with a prompt file and output path.
-3. Let the local audit check the generated output.
-4. Review clean artifacts in `artifacts/`.
-5. Commit only clean outputs.
-
-Example:
-
-```powershell
-.\ops\aos.ps1 -PromptFile ".\prompts\portfolio\ai_writing_assistant_case_study.prompt.txt" -OutFile ".\artifacts\portfolio\case_studies\ai_writing_assistant_memo_case_study.md" -ExpectedType "markdown" -Force
-```
-
-Rules:
-
-- Prefer prompt files over long inline prompts.
-- Use `ops/aos.ps1` before legacy scripts.
-- Do not commit test artifacts, logs, quarantine files, or broken Hermes outputs.
-
 ## Self-Healing Audit Layer
 
 The repository includes an emerging self-healing workflow designed to prevent broken Hermes outputs from becoming accepted artifacts.
@@ -278,51 +196,6 @@ This artifact integrates:
 * Portfolio Translation Workflow
 
 It demonstrates how the system converts lesson exposure into a competency-bearing artifact.
-
-## Strategic Uses
-
-This system is designed to support:
-
-### Technical Interviews
-
-Use the curriculum to structure answers around:
-
-```text
-claim -> method -> evidence -> assumptions -> limitations -> failure modes
-```
-
-### Product and AI Strategy
-
-Use the modules to reason about:
-
-* user problems
-* AI suitability
-* model reliability
-* evaluation
-* deployment risk
-* governance
-
-### Research and Academic Advancement
-
-Use the capstone and research templates to develop:
-
-* research questions
-* proposals
-* methods sections
-* evidence plans
-* literature-linked arguments
-
-### Portfolio Development
-
-Use artifacts to demonstrate competencies through:
-
-* case studies
-* technical READMEs
-* notebooks
-* memos
-* model cards
-* data pipeline reviews
-* oral defense preparation
 
 ## Governance
 
