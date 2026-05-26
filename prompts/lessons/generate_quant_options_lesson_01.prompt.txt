@@ -1,0 +1,234 @@
+Task:
+Create a new AOS-integrated lesson artifact for quantitative finance, econometrics, and options trading.
+
+Primary output path:
+artifacts/lessons/08_quantitative_finance/lesson_01_alpha_options_directionality.md
+
+Consult these AOS files:
+- modules/_module_index.md
+- modules/08_quantitative_finance.md
+- modules/02_probability_statistics.md
+- modules/03_causal_inference.md
+- modules/04_machine_learning.md
+- modules/07_data_engineering_infrastructure.md
+- modules/14_decision_theory_optimization.md
+- modules/20_experimental_design_metrics.md
+- modules/12_technical_communication_portfolio.md
+- templates/lesson_template.md
+- rubrics/assumption_awareness.md
+- rubrics/causal_reasoning_quality.md
+- rubrics/technical_artifact_quality.md
+- rubrics/synthesis_portfolio_quality.md
+- learner-state/current_student_state.json
+- curriculum/pathways/dependency_graph.md
+
+Lesson title:
+Alpha Is Not Observed Return, and Options Are Not Just Directional Bets
+
+Purpose:
+Teach quantitative finance and options trading through the AOS methodology. The lesson should help a student studying economics and data science with a statistics minor understand both school-relevant concepts and practical trading research discipline.
+
+Student background:
+Assume the learner knows introductory finance and basic options terminology, but wants crisp refreshers when useful. Use real math, but always translate formulas into plain English. Be rigorous without becoming needlessly obscure.
+
+AOS methodology:
+Use these principles throughout:
+- Purpose before technique.
+- Identification before estimation.
+- Models are controlled omissions.
+- Data is produced, not found.
+- Metrics are proxies, not values.
+- Prediction is not explanation.
+- Infrastructure is epistemic.
+- Markets are adaptive systems.
+- Risk management is governance.
+- Synthesis requires visible artifacts.
+
+Core thesis:
+Observed trading performance is not automatically alpha. It may reflect risk exposure, noise, selection bias, overfitting, transaction costs, slippage, market impact, regime luck, volatility risk premia, liquidity effects, or market adaptation.
+
+Options thesis:
+Options are not just leveraged directional bets. They are instruments for trading direction, volatility, convexity, time decay, skew, tail risk, liquidity, path dependency, and probability distributions.
+
+Core conceptual tension:
+A beginner sees profit and thinks "edge." A serious quant asks: was this true alpha, compensated risk, volatility exposure, lucky timing, cheap leverage, hidden tail risk, or a backtest illusion?
+
+Required lesson structure:
+Follow templates/lesson_template.md, but adapt it to this lesson. Include these sections:
+
+1. Metadata
+2. Serious Problem or Conceptual Tension
+3. Core Concepts
+4. Formal Framework
+5. Assumptions
+6. Failure Modes and Misinterpretations
+7. Worked Example
+8. School Connections
+9. AOS Synthesis
+10. Required Artifact
+11. Exercise
+12. Oral-Defense Prompt
+13. Artifact Registry Recommendation
+
+Concepts that must be taught:
+- observed return vs alpha
+- CAPM alpha
+- multifactor alpha
+- beta exposure vs true edge
+- risk premium vs mispricing
+- Sharpe ratio
+- t-statistic for mean return
+- gross return vs net return
+- transaction costs, slippage, and market impact
+- options as payoff geometry
+- calls and puts refresher
+- payoff diagrams conceptually
+- implied volatility vs realized volatility
+- volatility risk premium
+- Greeks as risk language: delta, gamma, theta, vega
+- directional bet vs volatility bet
+- high win rate vs positive expected value
+- model price vs executable price
+- backtest vs live trading
+
+Core formulas to include and explain:
+
+CAPM:
+R_i - r_f = alpha_i + beta_i(R_m - r_f) + epsilon_i
+
+Multifactor model:
+R_i - r_f = alpha_i + beta_1 F_1 + beta_2 F_2 + ... + beta_k F_k + epsilon_i
+
+Sharpe ratio:
+Sharpe = E[R_p - r_f] / sigma(R_p - r_f)
+
+t-statistic:
+t = mean(R) / (sigma(R) / sqrt(T))
+
+Portfolio return:
+R_p,t+1 = w_t' r_t+1
+
+Portfolio variance:
+Var(R_p) = w' Sigma w
+
+Net return:
+R_net = R_gross - transaction_costs - slippage - market_impact
+
+Put-call parity:
+C - P = S - K e^(-rT)
+
+Black-Scholes call price:
+C = S N(d1) - K e^(-rT) N(d2)
+
+Delta:
+Delta = partial V / partial S
+
+Gamma:
+Gamma = partial^2 V / partial S^2
+
+Theta:
+Theta = partial V / partial t
+
+Vega:
+Vega = partial V / partial sigma
+
+Requirements for each formula:
+- define each symbol;
+- explain the plain-English meaning;
+- explain how it connects to school concepts;
+- explain how it can be misused in trading.
+
+School connections:
+Explicitly connect the lesson to:
+- economics: risk premia, incentives, market efficiency, equilibrium, arbitrage
+- statistics: expected value, variance, covariance, hypothesis testing, standard errors
+- econometrics: regression, omitted variable bias, selection bias, identification
+- data science: features, labels, leakage, validation, pipelines, model evaluation
+- calculus: derivatives and Greeks
+- linear algebra: portfolio weights, covariance matrices, quadratic forms
+
+Options strategy guide preview:
+Do not fully teach every options strategy yet. Briefly introduce that later lessons will cover:
+- long calls and puts
+- covered calls
+- cash-secured puts
+- vertical spreads
+- straddles
+- strangles
+- iron condors
+- butterflies
+- calendars
+- collars
+- volatility trades
+- earnings trades
+- hedging strategies
+
+For this lesson, focus on the analytical foundation:
+- thesis before strategy;
+- risk before return;
+- payoff before probability;
+- volatility before premium;
+- execution before backtest;
+- review before scaling.
+
+Options analysis best practices to introduce:
+- start with thesis before choosing a structure;
+- separate direction, volatility, time, and event risk;
+- compare implied volatility to realized volatility;
+- check liquidity and bid-ask spread;
+- define max loss before entry;
+- use scenario analysis;
+- understand Greek exposure;
+- avoid strategies where costs dominate edge;
+- paper trade before live deployment;
+- journal thesis, entry, exit, and post-trade review.
+
+Required worked example:
+Create a small conceptual example comparing:
+1. a stock position with positive observed return;
+2. a call option trade with positive observed return;
+3. why neither automatically proves alpha.
+
+The example should show how apparent performance may come from:
+- market beta;
+- volatility expansion;
+- leverage;
+- lucky timing;
+- undercounted transaction costs;
+- unobserved risk exposure.
+
+Required artifact:
+End the lesson by proposing a first AOS portfolio artifact:
+
+Artifact title:
+Alpha vs Observed Return: Options-Aware Strategy Critique Memo
+
+Suggested output path:
+artifacts/projects/quant_options/alpha_vs_observed_return_strategy_critique.md
+
+Artifact purpose:
+The student selects a hypothetical or paper-traded strategy and separates:
+- raw return;
+- factor exposure;
+- options exposure;
+- volatility exposure;
+- transaction costs;
+- execution assumptions;
+- risk limits;
+- evidence needed before calling it alpha.
+
+Safety:
+Do not provide buy/sell recommendations.
+Do not suggest live trades.
+Do not claim a strategy is profitable.
+Teach analysis, risk discipline, and research process.
+Emphasize paper trading, small sizing, defined risk, journaling, and max loss.
+
+Output requirements:
+- Output clean Markdown only.
+- Use plain ASCII only.
+- Do not use curly quotes, em dashes, or special typography.
+- Do not include terminal logs.
+- Do not include Hermes CLI messages.
+- Do not mention that you are following these instructions.
+- Produce the lesson artifact only.
