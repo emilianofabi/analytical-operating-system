@@ -104,7 +104,7 @@ const Hero = ({ onViewCommandCenter }) => {
           <button onClick={onViewCommandCenter} className="px-8 py-4 rounded-full bg-ivory text-obsidian font-semibold text-lg hover:bg-champagne transition-colors duration-300">
             Open Command Center
           </button>
-          <span className="font-mono text-sm text-ivory/40">v1.0.0-beta // Local First</span>
+          <span className="font-mono text-sm text-ivory/40">v1.0.0-prototype // Local First</span>
         </div>
       </div>
     </section>
@@ -477,7 +477,7 @@ const Proof = () => {
           <h2 className="text-4xl md:text-5xl font-semibold mb-8">Proven Loops</h2>
           <p className="text-xl text-ivory/50 mb-12 text-balance">
             The output of the Analytical Operating System is not temporary knowledge, but persistent, inspectable artifacts.
-            Hover over the artifacts to inspect their cryptographic DAG traces.
+            Hover over the artifacts to inspect their artifact lineage.
           </p>
           <div className="space-y-4 relative z-20">
             {proofs.map((proof, i) => (
@@ -557,7 +557,7 @@ const Footer = () => {
       <div className="text-champagne italic font-serif text-lg">The loop is the product.</div>
       <div className="flex items-center gap-2 text-ivory/60">
         <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
-        System Operational
+        Demo snapshot
       </div>
     </footer>
   );

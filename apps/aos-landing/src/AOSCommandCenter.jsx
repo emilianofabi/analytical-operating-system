@@ -80,7 +80,7 @@ export default function AOSCommandCenter() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full font-mono text-[10px] text-champagne uppercase tracking-widest mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-champagne animate-pulse"></span>
-                System Operational
+                Demo snapshot
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans tracking-tighter leading-[0.9] text-ivory mb-6">
                 Evidence, <br/><span className="text-ivory/40 font-serif italic pr-4">not vibes.</span>
@@ -107,7 +107,7 @@ export default function AOSCommandCenter() {
                 <div className="flex items-center gap-3 bg-emerald-500/10 px-4 py-2.5 rounded-xl border border-emerald-500/20">
                   <Shield size={18} className="text-emerald-500" />
                   <div className="flex flex-col">
-                    <span className="text-emerald-500/60 text-[10px] uppercase">Working Tree</span>
+                    <span className="text-emerald-500/60 text-[10px] uppercase">Example Repo State</span>
                     <span className="text-emerald-500 leading-none">{systemStatus.workingTree}</span>
                   </div>
                 </div>
@@ -606,7 +606,7 @@ export default function AOSCommandCenter() {
                     </li>
                     <li className="relative mt-8">
                       <span className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
-                      <span className="text-emerald-400">Build verified (<code className="bg-emerald-500/10 px-1 rounded">npm run build</code>)</span>
+                      <span className="text-emerald-400">Build command available (<code className="bg-emerald-500/10 px-1 rounded">npm run build</code>)</span>
                     </li>
                   </ul>
                 </div>
