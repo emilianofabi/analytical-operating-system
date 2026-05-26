@@ -1,0 +1,1099 @@
+{
+  "systemStatus": {
+    "closedLoops": 3,
+    "activeModules": 4,
+    "portfolioReady": 3,
+    "workingTree": "Clean"
+  },
+  "modules": [
+    {
+      "title": "Probability and Statistics",
+      "track": "Foundational",
+      "competency": "Statistical reasoning",
+      "progress": "proficient",
+      "artifactsProduced": 2,
+      "nextArtifact": "evidence interpretation brief",
+      "overview": "Training in foundational uncertainty, randomness, and statistical evidence evaluation.",
+      "aosPrinciples": [
+        "Do not hide behind abstraction",
+        "Metrics are proxies"
+      ],
+      "lessons": [
+        {
+          "title": "Randomness, uncertainty, and distributions",
+          "focus": "Foundations",
+          "purpose": "Establish a rigorous mental model for treating randomness as structured distributions rather than noise.",
+          "concepts": [
+            "Probability",
+            "Distributions"
+          ],
+          "artifact": "simulation notebook",
+          "artifactType": "Python Notebook",
+          "whyItMatters": "Without defining the distribution, point estimates are unreliable.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Sampling, estimation, and standard error",
+          "focus": "Inference",
+          "purpose": "Understand how sample properties map to population parameters under uncertainty.",
+          "concepts": [
+            "Sampling",
+            "Standard Error"
+          ],
+          "artifact": "statistical reasoning memo",
+          "artifactType": "Markdown Memo",
+          "whyItMatters": "Differentiates signal from sample variation.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Hypothesis testing and statistical evidence",
+          "focus": "Evidence",
+          "purpose": "Evaluate whether data contradicts a null assumption rigorously.",
+          "concepts": [
+            "p-values",
+            "Power"
+          ],
+          "artifact": "evidence interpretation brief",
+          "artifactType": "Analysis Brief",
+          "whyItMatters": "Prevents false discovery and validates effect sizes.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Regression as controlled comparison",
+          "focus": "Modeling",
+          "purpose": "Use regression mechanics to control for observable confounders.",
+          "concepts": [
+            "Regression",
+            "Controls"
+          ],
+          "artifact": "regression analysis",
+          "artifactType": "Python Script",
+          "whyItMatters": "Forms the basis for all predictive and causal modeling.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": [
+        {
+          "title": "Quant/options Lesson 1",
+          "type": "Interactive Notebook",
+          "status": "committed",
+          "proves": "Understanding of return distribution and standard error."
+        }
+      ]
+    },
+    {
+      "title": "Data Engineering and Infrastructure",
+      "track": "Foundational",
+      "competency": "Data infrastructure",
+      "progress": "developing",
+      "artifactsProduced": 1,
+      "nextArtifact": "ETL Pipeline Spec",
+      "overview": "Building reproducible, observable pipelines to support reliable analytical evidence.",
+      "aosPrinciples": [
+        "Infrastructure as guardrails",
+        "Document the process"
+      ],
+      "lessons": [
+        {
+          "title": "Data is produced, not found",
+          "focus": "Generation",
+          "purpose": "Trace analytical data back to the telemetry that generated it.",
+          "concepts": [
+            "Data generation process",
+            "Telemetry"
+          ],
+          "artifact": "data lineage map",
+          "artifactType": "Map",
+          "whyItMatters": "Ignorance of the data generating process causes hidden bias.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Pipelines, schemas, and validation",
+          "focus": "Structure",
+          "purpose": "Design robust data ingestion with strict types.",
+          "concepts": [
+            "Schemas",
+            "Validation"
+          ],
+          "artifact": "pipeline spec",
+          "artifactType": "Spec Doc",
+          "whyItMatters": "Silent data failures corrupt all downstream models.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "ETL/ELT and reproducibility",
+          "focus": "Transformation",
+          "purpose": "Build idempotent analytical environments.",
+          "concepts": [
+            "ETL",
+            "Idempotence"
+          ],
+          "artifact": "reproducible analysis environment",
+          "artifactType": "Code Repo",
+          "whyItMatters": "If it cannot be reproduced from scratch, it is not evidence.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Observability and data quality",
+          "focus": "Monitoring",
+          "purpose": "Establish tests to catch data drift.",
+          "concepts": [
+            "Data quality",
+            "Observability"
+          ],
+          "artifact": "data quality checklist",
+          "artifactType": "Checklist",
+          "whyItMatters": "Data decays rapidly over time without active monitoring.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Infrastructure as guardrails",
+          "focus": "Architecture",
+          "purpose": "Use system design to limit degrees of freedom.",
+          "concepts": [
+            "System guardrails",
+            "Data architecture"
+          ],
+          "artifact": "architecture memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Structure prevents analysts from hacking ad-hoc answers.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Machine Learning",
+      "track": "Methods and Systems",
+      "competency": "Model judgment",
+      "progress": "proficient",
+      "artifactsProduced": 2,
+      "nextArtifact": "Model bias audit",
+      "overview": "Evaluation, validation, and diagnostic pressure testing of predictive models.",
+      "aosPrinciples": [
+        "Evaluate failure modes",
+        "Metrics are proxies"
+      ],
+      "lessons": [
+        {
+          "title": "Prediction versus explanation",
+          "focus": "Goals",
+          "purpose": "Differentiate models built for predictive accuracy from models built for causal interpretation.",
+          "concepts": [
+            "Prediction",
+            "Inference"
+          ],
+          "artifact": "model goal memo",
+          "artifactType": "Design Doc",
+          "whyItMatters": "Prevents using a black-box predictor to make major policy decisions.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Train/test splits and leakage",
+          "focus": "Validation",
+          "purpose": "Enforce strict boundaries between training data and validation evidence.",
+          "concepts": [
+            "Data leakage",
+            "Cross-validation"
+          ],
+          "artifact": "validation protocol",
+          "artifactType": "Code/Doc",
+          "whyItMatters": "Data leakage invalidates all downstream metrics.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Bias-variance tradeoff",
+          "focus": "Performance",
+          "purpose": "Diagnose underfitting and overfitting structurally.",
+          "concepts": [
+            "Bias",
+            "Variance",
+            "Overfitting"
+          ],
+          "artifact": "prediction notebook",
+          "artifactType": "Python Notebook",
+          "whyItMatters": "Dictates model complexity and regularizer choice.",
+          "loopStage": "revised"
+        },
+        {
+          "title": "Model evaluation and error analysis",
+          "focus": "Diagnostics",
+          "purpose": "Move beyond aggregate metrics by inspecting specific failure modes.",
+          "concepts": [
+            "Error analysis",
+            "Confusion matrix"
+          ],
+          "artifact": "error analysis report",
+          "artifactType": "Markdown Report",
+          "whyItMatters": "Overall accuracy hides catastrophic specific errors.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Interpretability and deployment limits",
+          "focus": "Deployment",
+          "purpose": "Define the operational envelope and feature attributions of the model.",
+          "concepts": [
+            "Interpretability",
+            "Drift"
+          ],
+          "artifact": "model card",
+          "artifactType": "Model Card",
+          "whyItMatters": "Allows humans to oversee and audit automated predictions.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Causal Inference",
+      "track": "Methods and Systems",
+      "competency": "Causal identification",
+      "progress": "advanced",
+      "artifactsProduced": 3,
+      "nextArtifact": "DAG Analysis Report",
+      "overview": "Rigorous identification of causal effects versus spurious correlations using causal models.",
+      "aosPrinciples": [
+        "Identify confounding",
+        "Apply review pressure"
+      ],
+      "lessons": [
+        {
+          "title": "Correlation versus causation",
+          "focus": "Foundations",
+          "purpose": "Formally separate observational correlation from actual intervention.",
+          "concepts": [
+            "Spurious correlation",
+            "Causal paths"
+          ],
+          "artifact": "causal identification memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Intervening on a proxy does not change the outcome.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "DAGs and identification",
+          "focus": "Structure",
+          "purpose": "Draw explicit assumptions to identify valid backdoor adjustment sets.",
+          "concepts": [
+            "DAGs",
+            "Backdoor paths"
+          ],
+          "artifact": "DAG analysis",
+          "artifactType": "DAG Diagram",
+          "whyItMatters": "Makes assumptions explicit, auditable, and falsifiable.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Confounding, selection, and colliders",
+          "focus": "Bias",
+          "purpose": "Identify paths that induce spurious non-causal associations.",
+          "concepts": [
+            "Confounding",
+            "Colliders"
+          ],
+          "artifact": "bias identification note",
+          "artifactType": "Design Doc",
+          "whyItMatters": "Controlling for a collider actively creates bias.",
+          "loopStage": "revised"
+        },
+        {
+          "title": "ITT versus treatment-on-treated",
+          "focus": "Experiments",
+          "purpose": "Distinguish the effect of offering treatment from actually taking it.",
+          "concepts": [
+            "ITT",
+            "TOT",
+            "Non-compliance"
+          ],
+          "artifact": "statistical analysis plan",
+          "artifactType": "SAP Doc",
+          "whyItMatters": "Solves real-world non-compliance in field experiments.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Difference-in-differences and experiments",
+          "focus": "Quasi-experiments",
+          "purpose": "Exploit natural experiments when randomization is impossible.",
+          "concepts": [
+            "DiD",
+            "Parallel trends"
+          ],
+          "artifact": "DiD analysis",
+          "artifactType": "Python/R Code",
+          "whyItMatters": "Provides causal leverage on historical observational data.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": [
+        {
+          "title": "AI Writing Assistance DAG / SAP",
+          "type": "Statistical Analysis Plan",
+          "status": "audited",
+          "proves": "distinguish ITT/offered-access effect Z -> Y from actual-use effect D -> Y"
+        }
+      ]
+    },
+    {
+      "title": "LLMs, Agents, and RAG",
+      "track": "Methods and Systems",
+      "competency": "AI system design",
+      "progress": "emerging",
+      "artifactsProduced": 1,
+      "nextArtifact": "Agent topology map",
+      "overview": "Designing, evaluating, and bounding large language models and agentic workflows.",
+      "aosPrinciples": [
+        "One agent, one job",
+        "Traceability"
+      ],
+      "lessons": [
+        {
+          "title": "LLMs as interfaces, not oracles",
+          "focus": "Mental Models",
+          "purpose": "Frame language models as probabilistic text generators.",
+          "concepts": [
+            "Interfaces",
+            "Stochasticity"
+          ],
+          "artifact": "mental model memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Treating LLMs as knowledge bases causes hallucinations.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Retrieval and context management",
+          "focus": "RAG",
+          "purpose": "Inject verifiable facts into LLM context windows.",
+          "concepts": [
+            "Vector search",
+            "Context windows"
+          ],
+          "artifact": "RAG architecture sketch",
+          "artifactType": "Diagram",
+          "whyItMatters": "Separates world knowledge from language syntax.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Agent roles and workflow boundaries",
+          "focus": "Agents",
+          "purpose": "Enforce strict single-responsibility prompts.",
+          "concepts": [
+            "Role prompting",
+            "Boundaries"
+          ],
+          "artifact": "agent role map",
+          "artifactType": "Map",
+          "whyItMatters": "Agents with too much agency collapse into endless loops.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Evaluation, hallucination, and traceability",
+          "focus": "Evaluation",
+          "purpose": "Measure agent performance systematically.",
+          "concepts": [
+            "Hallucination",
+            "Evaluation frameworks"
+          ],
+          "artifact": "evaluation rubric",
+          "artifactType": "Rubric",
+          "whyItMatters": "Vibes-based evaluation fails at scale.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Local-first AI workflows",
+          "focus": "Architecture",
+          "purpose": "Design systems that work without internet access.",
+          "concepts": [
+            "Local models",
+            "Privacy"
+          ],
+          "artifact": "local workflow spec",
+          "artifactType": "Spec",
+          "whyItMatters": "Ensures data privacy and system resilience.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Experimental Design and Metrics",
+      "track": "Methods and Systems",
+      "competency": "Experimental design",
+      "progress": "developing",
+      "artifactsProduced": 0,
+      "nextArtifact": "A/B test specification",
+      "overview": "Designing valid experiments and establishing non-perverse metric frameworks.",
+      "aosPrinciples": [
+        "Metrics are proxies",
+        "Identify hidden weaknesses"
+      ],
+      "lessons": [
+        {
+          "title": "Metrics are proxies, not values",
+          "focus": "Foundations",
+          "purpose": "Differentiate what you care about from what you measure.",
+          "concepts": [
+            "Goodhart's Law",
+            "Proxies"
+          ],
+          "artifact": "metrics framework",
+          "artifactType": "Framework",
+          "whyItMatters": "Optimizing the wrong proxy destroys the underlying value.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Treatment assignment and experiment validity",
+          "focus": "Design",
+          "purpose": "Structure valid randomized control trials.",
+          "concepts": [
+            "Randomization",
+            "Validity"
+          ],
+          "artifact": "experiment design memo",
+          "artifactType": "Design Doc",
+          "whyItMatters": "Flawed randomization creates biased causal estimates.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Power, sample size, and detectable effects",
+          "focus": "Statistics",
+          "purpose": "Calculate exactly how much data is needed to detect an effect.",
+          "concepts": [
+            "Power",
+            "MDE"
+          ],
+          "artifact": "power analysis note",
+          "artifactType": "Notebook",
+          "whyItMatters": "Underpowered experiments waste time and yield false negatives.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Guardrail metrics and unintended incentives",
+          "focus": "Safety",
+          "purpose": "Define metrics to prevent unintended damage.",
+          "concepts": [
+            "Guardrails",
+            "Incentives"
+          ],
+          "artifact": "guardrail metric spec",
+          "artifactType": "Spec",
+          "whyItMatters": "Success in one metric often cannibalizes another.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Labor Economics and Human Capital",
+      "track": "Integration and Judgment",
+      "competency": "Economic reasoning",
+      "progress": "not_started",
+      "artifactsProduced": 0,
+      "nextArtifact": "Literature synthesis",
+      "overview": "Understanding core dynamics of labor markets, signals, and human capital accumulation.",
+      "aosPrinciples": [
+        "Translate to portfolio",
+        "Check assumptions"
+      ],
+      "lessons": [
+        {
+          "title": "Human capital versus signaling",
+          "focus": "Foundations",
+          "purpose": "Separate actual skill from credential signals.",
+          "concepts": [
+            "Signaling",
+            "Capital"
+          ],
+          "artifact": "signaling memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Determines how employers value candidates.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Labor supply and incentives",
+          "focus": "Supply",
+          "purpose": "Understand how compensation shapes effort.",
+          "concepts": [
+            "Elasticity",
+            "Taxes"
+          ],
+          "artifact": "incentive analysis",
+          "artifactType": "Analysis",
+          "whyItMatters": "Misaligned incentives cause major retention issues.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Industrial Organization and Platforms",
+      "track": "Integration and Judgment",
+      "competency": "Market reasoning",
+      "progress": "not_started",
+      "artifactsProduced": 0,
+      "nextArtifact": "Market structure analysis",
+      "overview": "Analyzing network effects, competitive moats, and platform economics.",
+      "aosPrinciples": [
+        "Identify hidden weaknesses",
+        "Observe regimes"
+      ],
+      "lessons": [
+        {
+          "title": "Market power and concentration",
+          "focus": "Structure",
+          "purpose": "Identify clear monopolies and pricing power.",
+          "concepts": [
+            "Monopoly",
+            "HHI"
+          ],
+          "artifact": "market analysis",
+          "artifactType": "Analysis",
+          "whyItMatters": "Explains long-term margin sustainability.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Multi-sided platforms",
+          "focus": "Networks",
+          "purpose": "Analyze business models connecting distinct user groups.",
+          "concepts": [
+            "Network effects",
+            "Subsidies"
+          ],
+          "artifact": "platform architecture memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Network effects are the strongest defensible moat in tech.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Quantitative Finance and Options",
+      "track": "Integration and Judgment",
+      "competency": "Market reasoning",
+      "progress": "proficient",
+      "artifactsProduced": 2,
+      "nextArtifact": "Volatility Surface Notebook",
+      "overview": "Analyzing market mechanics, risk regimes, and option pricing structures.",
+      "aosPrinciples": [
+        "Observe regimes",
+        "Check assumptions"
+      ],
+      "lessons": [
+        {
+          "title": "Observed return is not alpha",
+          "focus": "Returns",
+          "purpose": "Decompose portfolio returns into risk factors.",
+          "concepts": [
+            "Alpha",
+            "Beta"
+          ],
+          "artifact": "alpha decomposition memo",
+          "artifactType": "Notebook",
+          "whyItMatters": "Prevents confusing leveraged beta with actual skill.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Risk factors and factor exposure",
+          "focus": "Risk",
+          "purpose": "Measure exposure to hidden hidden risks.",
+          "concepts": [
+            "Factor models",
+            "Exposure"
+          ],
+          "artifact": "factor analysis notebook",
+          "artifactType": "Notebook",
+          "whyItMatters": "Hidden exposures cause catastrophic correlated failures.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Sharpe ratios, drawdowns, and transaction costs",
+          "focus": "Performance",
+          "purpose": "Evaluate trading strategies rigorously.",
+          "concepts": [
+            "Sharpe",
+            "Drawdown"
+          ],
+          "artifact": "performance report",
+          "artifactType": "Report",
+          "whyItMatters": "Transaction costs destroy paper-only strategies.",
+          "loopStage": "revised"
+        },
+        {
+          "title": "Options as volatility, convexity, time, and skew instruments",
+          "focus": "Derivatives",
+          "purpose": "Treat options as multi-dimensional risk instruments.",
+          "concepts": [
+            "Greeks",
+            "Convexity",
+            "Skew"
+          ],
+          "artifact": "options payoff/risk notebook",
+          "artifactType": "Notebook",
+          "whyItMatters": "Options are not just directional bets; they price variance.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Backtesting and regime risk",
+          "focus": "Validation",
+          "purpose": "Simulate strategies across changing market conditions.",
+          "concepts": [
+            "Backtesting",
+            "Regime shifts"
+          ],
+          "artifact": "backtest protocol",
+          "artifactType": "Code Repo",
+          "whyItMatters": "Strategies that work in bull markets blow up in regimes shifts.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": [
+        {
+          "title": "Quant/options Lesson 1",
+          "type": "Interactive Notebook",
+          "status": "committed",
+          "proves": "observed return is not automatically alpha; options are not just directional bets"
+        }
+      ]
+    },
+    {
+      "title": "Entrepreneurship and Venture Strategy",
+      "track": "Integration and Judgment",
+      "competency": "Venture reasoning",
+      "progress": "not_started",
+      "artifactsProduced": 0,
+      "nextArtifact": "Thesis memo",
+      "overview": "Evaluating start-up viability, risk, and venture capital mechanics.",
+      "aosPrinciples": [
+        "Evaluate failure modes",
+        "Translate to portfolio"
+      ],
+      "lessons": [
+        {
+          "title": "Venture capital as an asset class",
+          "focus": "Finance",
+          "purpose": "Understand the power law economics of early-stage investing.",
+          "concepts": [
+            "Power law",
+            "IRR"
+          ],
+          "artifact": "fund mechanics note",
+          "artifactType": "Memo",
+          "whyItMatters": "Explains why VCs only fund extreme high-variance bets.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Founder-market fit and moats",
+          "focus": "Strategy",
+          "purpose": "Evaluate startup defensibility before scale.",
+          "concepts": [
+            "Moats",
+            "Product-market fit"
+          ],
+          "artifact": "thesis memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Great technology fails without long-term defensibility.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Responsible AI and Governance",
+      "track": "Integration and Judgment",
+      "competency": "Governance and risk",
+      "progress": "emerging",
+      "artifactsProduced": 0,
+      "nextArtifact": "Algorithmic Impact Assessment",
+      "overview": "Translating ethical principles into auditable institutional risk frameworks.",
+      "aosPrinciples": [
+        "Document risks",
+        "Human oversight"
+      ],
+      "lessons": [
+        {
+          "title": "Risk, accountability, and model limits",
+          "focus": "Foundations",
+          "purpose": "Define who is responsible for automated failure.",
+          "concepts": [
+            "Accountability",
+            "Model limits"
+          ],
+          "artifact": "AI governance memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Algorithms cannot hold legal or moral liability.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Algorithmic impact assessment",
+          "focus": "Assessment",
+          "purpose": "Systematically map harms before deployment.",
+          "concepts": [
+            "Impact assessment",
+            "Harms"
+          ],
+          "artifact": "algorithmic impact assessment",
+          "artifactType": "Assessment",
+          "whyItMatters": "Prevents shipping models that cause discriminatory harm.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Human oversight and documentation",
+          "focus": "Oversight",
+          "purpose": "Design human-in-the-loop fallback systems.",
+          "concepts": [
+            "Human-in-the-loop",
+            "Documentation"
+          ],
+          "artifact": "oversight protocol",
+          "artifactType": "Protocol",
+          "whyItMatters": "Ensures exceptions can be handled safely.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Bias, fairness, and institutional context",
+          "focus": "Fairness",
+          "purpose": "Translate mathematical fairness metrics to policy.",
+          "concepts": [
+            "Fairness metrics",
+            "Context"
+          ],
+          "artifact": "risk register",
+          "artifactType": "Register",
+          "whyItMatters": "Fairness definitions often mutually contradict in practice.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Technical Communication and Portfolio",
+      "track": "Integration and Judgment",
+      "competency": "Technical communication",
+      "progress": "advanced",
+      "artifactsProduced": 4,
+      "nextArtifact": "Portfolio extraction",
+      "overview": "Converting analytical outputs into legible, compelling evidence for external review.",
+      "aosPrinciples": [
+        "Translate to portfolio",
+        "Evidence, not vibes"
+      ],
+      "lessons": [
+        {
+          "title": "Translating analysis into public evidence",
+          "focus": "Translation",
+          "purpose": "Convert complex code into legible portfolio artifacts.",
+          "concepts": [
+            "Legibility",
+            "Audience"
+          ],
+          "artifact": "artifact README",
+          "artifactType": "Markdown",
+          "whyItMatters": "Code that nobody can read has no impact.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Writing for reviewers and stakeholders",
+          "focus": "Audience",
+          "purpose": "Structure documents for extreme scannability.",
+          "concepts": [
+            "Stakeholder mapping",
+            "Reviewer needs"
+          ],
+          "artifact": "stakeholder memo",
+          "artifactType": "Memo",
+          "whyItMatters": "Stakeholders don't read paragraphs; they scan structure.",
+          "loopStage": "audited"
+        },
+        {
+          "title": "Case studies, artifacts, and proof",
+          "focus": "Case Studies",
+          "purpose": "Bundle isolated artifacts into cohesive case studies.",
+          "concepts": [
+            "Narrative",
+            "Proof"
+          ],
+          "artifact": "portfolio case study",
+          "artifactType": "Case Study",
+          "whyItMatters": "Narrative proves the ability to execute end-to-end.",
+          "loopStage": "revised"
+        },
+        {
+          "title": "Resume/interview translation",
+          "focus": "Career",
+          "purpose": "Extract portfolio proof into high-density resume bullets.",
+          "concepts": [
+            "Interview narrative",
+            "Resume framing"
+          ],
+          "artifact": "interview narrative",
+          "artifactType": "Document",
+          "whyItMatters": "Secures actual career leverage from intellectual effort.",
+          "loopStage": "draft"
+        }
+      ],
+      "completedEvidence": [
+        {
+          "title": "AOS Proven Loop Pattern #1",
+          "type": "Process Template",
+          "status": "committed",
+          "proves": "the loop is the product"
+        }
+      ]
+    },
+    {
+      "title": "Public Policy and Governance",
+      "track": "Integration and Judgment",
+      "competency": "Policy analysis",
+      "progress": "developing",
+      "artifactsProduced": 1,
+      "nextArtifact": "Policy memo",
+      "overview": "Designing interventions in complex, multi-stakeholder environments.",
+      "aosPrinciples": [
+        "Identify confounding",
+        "Document risks"
+      ],
+      "lessons": [
+        {
+          "title": "Policy analysis and trade-offs",
+          "focus": "Foundations",
+          "purpose": "Evaluate complex interventions mathematically and ethically.",
+          "concepts": [
+            "Trade-offs",
+            "Efficiency"
+          ],
+          "artifact": "policy memo",
+          "artifactType": "Memo",
+          "whyItMatters": "No policy is perfect; all involve difficult trade-offs.",
+          "loopStage": "draft"
+        },
+        {
+          "title": "Market failures and intervention",
+          "focus": "Economics",
+          "purpose": "Identify exactly why a market fails before intervening.",
+          "concepts": [
+            "Externalities",
+            "Public goods"
+          ],
+          "artifact": "intervention design",
+          "artifactType": "Design Doc",
+          "whyItMatters": "Misdiagnosed market failures lead to worse policy outcomes.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    },
+    {
+      "title": "Capstone Integration",
+      "track": "Integration and Judgment",
+      "competency": "Portfolio synthesis",
+      "progress": "not_started",
+      "artifactsProduced": 0,
+      "nextArtifact": "Final system audit",
+      "overview": "Synthesizing methodologies into a final, comprehensive cohesive portfolio artifact.",
+      "aosPrinciples": [
+        "Commit evidence",
+        "Close the loop"
+      ],
+      "lessons": [
+        {
+          "title": "Problem framing",
+          "focus": "Strategy",
+          "purpose": "Define the core analytical thesis for the final project.",
+          "concepts": [
+            "Framing",
+            "Scope"
+          ],
+          "artifact": "capstone proposal",
+          "artifactType": "Proposal",
+          "whyItMatters": "Poor framing wastes months of execution time.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Evidence architecture",
+          "focus": "Design",
+          "purpose": "Map the dependencies between all required artifacts.",
+          "concepts": [
+            "Architecture",
+            "Evidence mapping"
+          ],
+          "artifact": "evidence architecture doc",
+          "artifactType": "Map",
+          "whyItMatters": "Ensures the final portfolio is cohesive, not just a random collection.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Cross-module synthesis",
+          "focus": "Synthesis",
+          "purpose": "Combine causal, predictive, and economic methodologies.",
+          "concepts": [
+            "Integration",
+            "Synthesis"
+          ],
+          "artifact": "synthesis draft",
+          "artifactType": "Draft",
+          "whyItMatters": "Real-world problems don't fit into single academic disciplines.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Final artifact loop",
+          "focus": "Execution",
+          "purpose": "Execute the core implementation.",
+          "concepts": [
+            "Review",
+            "Revision"
+          ],
+          "artifact": "final artifact",
+          "artifactType": "Code Repo",
+          "whyItMatters": "Closes the loop from theory to production evidence.",
+          "loopStage": "planned"
+        },
+        {
+          "title": "Portfolio presentation",
+          "focus": "Delivery",
+          "purpose": "Package the system for public stakeholder review.",
+          "concepts": [
+            "Presentation",
+            "Defense"
+          ],
+          "artifact": "public portfolio case study",
+          "artifactType": "Case Study",
+          "whyItMatters": "The final proof of competency.",
+          "loopStage": "planned"
+        }
+      ],
+      "completedEvidence": []
+    }
+  ],
+  "artifacts": [
+    {
+      "title": "AI Writing Assistance DAG / SAP",
+      "modules": [
+        "Causal Inference",
+        "Data Eng"
+      ],
+      "coreIdea": "distinguish ITT/offered-access effect Z -> Y from actual-use effect D -> Y",
+      "loopStatus": "audited",
+      "evidenceType": "Statistical Analysis Plan",
+      "portfolioReady": true
+    },
+    {
+      "title": "Quant/options Lesson 1",
+      "modules": [
+        "Quantitative Finance"
+      ],
+      "coreIdea": "observed return is not automatically alpha; options are not just directional bets",
+      "loopStatus": "committed",
+      "evidenceType": "Interactive Notebook",
+      "portfolioReady": true
+    },
+    {
+      "title": "AOS Proven Loop Pattern #1",
+      "modules": [
+        "AOS Architect"
+      ],
+      "coreIdea": "the loop is the product",
+      "loopStatus": "committed",
+      "evidenceType": "Process Template",
+      "portfolioReady": true
+    }
+  ],
+  "competencies": [
+    {
+      "name": "Statistical reasoning",
+      "level": "proficient",
+      "evidence": "Quant/options Lesson 1"
+    },
+    {
+      "name": "Causal identification",
+      "level": "advanced",
+      "evidence": "AI Writing Assistance DAG"
+    },
+    {
+      "name": "Model judgment",
+      "level": "developing",
+      "evidence": "-"
+    },
+    {
+      "name": "Data infrastructure",
+      "level": "emerging",
+      "evidence": "-"
+    },
+    {
+      "name": "Market reasoning",
+      "level": "proficient",
+      "evidence": "Quant/options Lesson 1"
+    },
+    {
+      "name": "Experimental design",
+      "level": "emerging",
+      "evidence": "-"
+    },
+    {
+      "name": "Technical communication",
+      "level": "advanced",
+      "evidence": "AOS Proven Loop Pattern #1"
+    },
+    {
+      "name": "AI system design",
+      "level": "developing",
+      "evidence": "-"
+    },
+    {
+      "name": "Governance and risk",
+      "level": "not_started",
+      "evidence": "-"
+    },
+    {
+      "name": "Portfolio synthesis",
+      "level": "proficient",
+      "evidence": "Multiple Artifacts"
+    }
+  ],
+  "agents": [
+    {
+      "name": "AOS Architect",
+      "role": "System design",
+      "job": "Define structure"
+    },
+    {
+      "name": "Context Compressor",
+      "role": "State tracking",
+      "job": "Reduce noise"
+    },
+    {
+      "name": "Brainstormer",
+      "role": "Idea generation",
+      "job": "Expand variance"
+    },
+    {
+      "name": "Hermes Quant",
+      "role": "Mathematical review",
+      "job": "Check assumptions"
+    },
+    {
+      "name": "Hermes DAG/SAP",
+      "role": "Causal review",
+      "job": "Identify confounding"
+    },
+    {
+      "name": "Hermes Closeout",
+      "role": "Verification",
+      "job": "Enforce completeness"
+    },
+    {
+      "name": "Hermes Security",
+      "role": "Risk review",
+      "job": "Identify vulnerabilities"
+    },
+    {
+      "name": "Claude Opus",
+      "role": "Synthesis",
+      "job": "Generate drafts"
+    },
+    {
+      "name": "Gemini / Antigravity",
+      "role": "Frontend ops",
+      "job": "Interface implementation"
+    }
+  ]
+}
