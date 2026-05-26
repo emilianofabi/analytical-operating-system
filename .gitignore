@@ -26,3 +26,4 @@ chat-logs/
 .obsidian/
 copy-paste/
 artifacts/hermes_session_*.txt
+.hermes/
