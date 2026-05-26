@@ -1,4 +1,4 @@
-﻿param(
+param(
     [Parameter(Mandatory=$true)]
     [string]$ArtifactFile,
 
@@ -6,7 +6,7 @@
     [string]$ExpectedType = "markdown"
 )
 
-$Project = "C:\Users\chefi\Projects\analytical-operating-system"
+$Project = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 Set-Location $Project
 
 New-Item -ItemType Directory -Force -Path ".\audits\reports" | Out-Null

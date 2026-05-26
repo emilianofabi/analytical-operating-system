@@ -1,4 +1,4 @@
-﻿param(
+param(
     [Parameter(Mandatory=$true)]
     [string]$ModuleFile,
 
@@ -9,7 +9,7 @@
     [string]$OutFile
 )
 
-$Project = "C:\Users\chefi\Projects\analytical-operating-system"
+$Project = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 Set-Location $Project
 
 [Console]::InputEncoding  = [System.Text.UTF8Encoding]::new($false)

@@ -1,4 +1,4 @@
-﻿param(
+param(
     [Parameter(Mandatory=$true)]
     [string]$PromptFile,
 
@@ -9,7 +9,7 @@
     [string]$ExpectedType = "markdown"
 )
 
-$Project = "C:\Users\chefi\Projects\analytical-operating-system"
+$Project = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 Set-Location $Project
 
 if (!(Test-Path $PromptFile)) {
@@ -37,7 +37,7 @@ $HermesArgs = @(
 $Output = & hermes @HermesArgs 2>&1
 $Output | Set-Content -Path $OutFile -Encoding UTF8
 
-& ".\ops\audit-artifact.ps1" -ArtifactFile $OutFile -ExpectedType $ExpectedType
+& (Join-Path $PSScriptRoot "audit-artifact.ps1") -ArtifactFile $OutFile -ExpectedType $ExpectedType
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Saved clean output to $OutFile"

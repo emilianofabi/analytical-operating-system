@@ -123,16 +123,8 @@ analytical-operating-system/
 |   `-- state_updates/
 |
 |-- ops/
-|   |-- aos.ps1
-|   |-- lesson.ps1
-|   |-- project-output.ps1
-|   |-- review-artifact.ps1
-|   |-- revise-artifact.ps1
-|   |-- generate-state-update.ps1
-|   |-- portfolio-translate.ps1
-|   |-- audit-artifact.ps1
-|   |-- semantic-audit.ps1
-|   `-- hermes-safe-run.ps1
+|   |-- aos.ps1              # Preferred runner
+|   `-- legacy/              # Superseded historical/reference scripts
 |
 `-- governance/
     |-- CHANGELOG.md
