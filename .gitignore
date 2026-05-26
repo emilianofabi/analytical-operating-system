@@ -14,6 +14,7 @@ Thumbs.db
 # Logs and temporary outputs
 *.log
 audits/logs/
+audits/quarantine/
 artifacts/generated/raw_outputs/
 artifacts/generated/scratch/
 
