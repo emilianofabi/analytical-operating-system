@@ -17,6 +17,7 @@ audits/logs/
 audits/quarantine/
 artifacts/generated/raw_outputs/
 artifacts/generated/scratch/
+learner-state/current_student_state.local.json
 
 # Sensitive or local-only files
 *.key
