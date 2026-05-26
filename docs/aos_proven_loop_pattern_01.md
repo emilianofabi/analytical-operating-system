@@ -129,12 +129,3 @@ Choose the next cycle by asking:
 
 Prefer the next small artifact that extends demonstrated competence rather than the largest possible new build.
 
-## Recommended Next Cycle
-
-Recommended next cycle: Quant/options Lesson 2.
-
-Do not generate Lesson 2 as part of this checklist. Start it only when explicitly requested, using the same lightweight loop:
-
-```text
-artifact -> review -> revision -> audit -> commit
-```
