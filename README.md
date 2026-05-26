@@ -12,6 +12,20 @@ Modern analytical competence is not reducible to coding, statistics, economics, 
 
 This project operationalizes that thesis as a local curriculum system. Hermes functions as the orchestration layer. The repository contains the curriculum source of truth: modules, rubrics, templates, learner state, project artifacts, audits, and governance files.
 
+## Who This Is For
+
+This repository is for learners, builders, and reviewers who want analytical work to become visible, assessable, and reusable.
+
+It is especially useful for:
+
+* **Interdisciplinary learners** who want to connect statistics, economics, machine learning, philosophy, policy, and technical communication without treating them as separate tracks.
+* **AI and product builders** who need to evaluate whether a model, agent, metric, or workflow is appropriate for a real user problem.
+* **Researchers and analysts** who want stronger habits around identification, assumptions, evidence, uncertainty, and limitations.
+* **Portfolio builders** who want case studies, memos, notebooks, and technical READMEs that demonstrate judgment rather than tool familiarity alone.
+* **Reviewers or mentors** who need rubrics, audit trails, and revision loops for assessing analytical artifacts.
+
+It is not primarily a prompt collection. It is a local operating system for producing and governing evidence-bearing analytical work.
+
 ## What This System Does
 
 This repository supports a full learning and production loop:
@@ -28,6 +42,16 @@ module card
 ```
 
 The goal is not simply to generate lessons. The goal is to produce evidence-bearing artifacts that demonstrate analytical judgment.
+
+## Core Concepts
+
+* **Module card:** A curriculum source file that defines a domain, its learning objectives, prerequisite links, competencies, and expected artifacts.
+* **Artifact:** A produced unit of work, such as a lesson, analysis plan, case study, review, revision, portfolio memo, or technical README.
+* **Rubric:** A structured evaluation lens used to assess whether an artifact demonstrates the intended competency.
+* **Semantic audit:** A quality review that checks analytical substance, not just file validity. It looks for missing assumptions, unsupported claims, weak limitations, and competency misalignment.
+* **Learner state:** A JSON-backed record of competency progress, artifact evidence, and curriculum position.
+* **Portfolio translation:** The conversion of internal learning artifacts into externally legible evidence for interviews, applications, public writing, or professional review.
+* **Hermes orchestration:** The local agent runtime used to generate, review, repair, audit, and translate artifacts from repository prompts and source files.
 
 ## Strategic Uses
 
@@ -66,6 +90,27 @@ analytical-operating-system/
 `-- templates/      # Provides structural scaffolding for lessons, projects, and portfolio items.
 ```
 
+## Start Here
+
+If you are new to the repository, use this navigation path before generating anything:
+
+1. **Understand the architecture:** Read `modules/_module_index.md` to see the 25-module curriculum map and routing logic.
+2. **Pick a module:** Open the relevant file in `modules/` and inspect its objectives, competencies, prerequisites, and artifact expectations.
+3. **Check sequencing:** Use `curriculum/pathways/dependency_graph.md` when deciding whether a module depends on earlier work.
+4. **Select an evaluation lens:** Review `rubrics/_rubric_index.md` and choose the rubric that matches the artifact type or competency.
+5. **Use a template when available:** Start from `templates/` when producing lessons, projects, portfolio items, or reviews.
+6. **Run through `ops/aos.ps1`:** Use the local runner for structured Hermes generation and structural audit checks.
+7. **Register only clean work:** Update learner-state files only after the artifact has been reviewed, revised, and accepted.
+
+For a first orientation pass, begin with:
+
+```text
+modules/_module_index.md
+curriculum/pathways/dependency_graph.md
+rubrics/_rubric_index.md
+ops/aos.ps1
+```
+
 ## Quick Start & Workflow
 
 **Prerequisites:** You must have [Hermes](https://hermes-agent.nousresearch.com/) installed and configured. Hermes acts as the AI agent and runtime for this system.
@@ -81,11 +126,21 @@ analytical-operating-system/
    ```
 3. **Run your first AOS loop:**
    While you can run Hermes directly when useful, the preferred local workflow uses `ops/aos.ps1`. This runner invokes Hermes with specific prompt files and output paths to ensure structured artifact generation.
-   
+
    ```powershell
    # Example: Generate a case study using a predefined prompt
    .\ops\aos.ps1 -PromptFile ".\prompts\portfolio\ai_writing_assistant_case_study.prompt.txt" -OutFile ".\artifacts\portfolio\case_studies\ai_writing_assistant_memo_case_study.md" -ExpectedType "markdown" -Force
    ```
+
+   Runner parameters:
+
+   * `-PromptFile` points to the prompt file that instructs Hermes what artifact to produce. Use files under `prompts/` rather than pasting long prompts into the terminal.
+   * `-OutFile` sets the destination artifact path. Choose a path under `artifacts/` that matches the artifact type, such as lessons, projects, reviews, or portfolio case studies.
+   * `-ExpectedType` tells the structural audit what format to validate. Use `markdown` for `.md` artifacts and `json` for schema-backed outputs.
+   * `-Skill` optionally selects the Hermes skill used for the run. The default is `curriculum-orchestrator`, which is appropriate for most curriculum generation and review loops.
+   * `-Retries` controls how many additional attempts the runner should make after a failed structural audit. The default is `1`, meaning up to two total attempts.
+   * `-Force` allows the runner to overwrite an existing `-OutFile`. Omit it when you want to protect an existing artifact from accidental replacement.
+
 4. **Audit and Commit:**
    Let the local audit check the generated output in `artifacts/`, then commit only clean, verified artifacts. Do not commit test artifacts, logs, quarantine files, or broken outputs.
 
@@ -213,6 +268,12 @@ Current version:
 
 ```text
 v0.2.0
+```
+
+Current maturity:
+
+```text
+Prototype / early operating system. The repository has a stable thesis, curriculum map, module structure, rubrics, templates, and local runner pattern, but the self-healing loop and learner-state automation are still being stabilized.
 ```
 
 Current focus:
