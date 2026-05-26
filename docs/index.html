@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A local AI-powered curriculum system for turning learning into evidence-bearing artifacts.">
+    <title>Analytical Operating System</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --fg: #f3f4f6;
+            --muted: #9ca3af;
+            --border: #27272a;
+            --card: #0f0f11;
+            --card-hover: #18181b;
+            --accent-1: #6366f1;
+            --accent-2: #06b6d4;
+            --glow: rgba(99, 102, 241, 0.15);
+            --font-sys: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sys);
+            background-color: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle background effects */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: -20vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80vw;
+            height: 60vh;
+            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #fff, #9ca3af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .accent-text {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Focus States */
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--accent-1);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        .btn:focus-visible {
+            outline-offset: 2px;
+        }
+
+        /* Nav */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.05em;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.04em;
+        }
+
+        .hero p.tagline {
+            font-size: 1.5rem;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero p.desc {
+            font-size: 1.125rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 14px var(--glow);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.03);
+            color: #fff;
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: #3f3f46;
+        }
+
+        /* Typography sizing for sections */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--muted);
+            max-width: 600px;
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            background: var(--card-hover);
+            border-color: #3f3f46;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* Loop Section */
+        .loop-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .loop-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .loop-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-2);
+        }
+
+        .loop-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        .loop-step h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .loop-step p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .loop-arrow {
+            color: var(--border);
+            display: flex;
+            align-items: center;
+        }
+
+        .loop-arrow svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+        /* Architecture Diagram */
+        .arch-diagram {
+            background: #09090b;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .arch-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            position: relative;
+        }
+
+        .arch-node {
+            background: var(--card);
+            border: 1px solid #3f3f46;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #e4e4e7;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: border-color 0.2s ease;
+            z-index: 2;
+        }
+        
+        .arch-node.core {
+            border-color: var(--accent-1);
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .arch-node:hover {
+            border-color: var(--accent-2);
+        }
+
+        .arch-line {
+            position: absolute;
+            width: 1px;
+            height: 2rem;
+            background: #3f3f46;
+            top: -2rem;
+            left: 50%;
+            z-index: 1;
+        }
+
+        /* Principles Grid */
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .principle {
+            background: var(--bg);
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .p-number {
+            font-family: monospace;
+            color: var(--accent-1);
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+
+        .principle h4 {
+            font-size: 1rem;
+            color: #d1d5db;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 4rem;
+        }
+
+        footer h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up {
+                transition: none;
+                transform: none;
+                opacity: 1;
+            }
+            .card {
+                transition: none;
+            }
+            .card:hover {
+                transform: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .loop-wrapper {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .loop-arrow {
+                transform: rotate(90deg);
+            }
+            .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .hero h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 600px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .actions { flex-direction: column; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">AOS.</div>
+            <div class="nav-links" style="display: flex; gap: 1.5rem;">
+                <a href="#loop" style="color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s;">Loop</a>
+                <a href="#architecture" style="color: var(--muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s;">Architecture</a>
+            </div>
+        </nav>
+
+        <section class="hero fade-up">
+            <h1 class="gradient-text">Analytical intelligence<br>is architectural.</h1>
+            <p class="tagline">A local AI-powered curriculum system for turning learning into evidence-bearing artifacts.</p>
+            <p class="desc">Analytical Operating System (AOS) is a personal infrastructure that acts as part curriculum system, part artifact factory, and part research workflow. Built to enforce analytical judgment through rigorous review, revision, and audit cycles.</p>
+            <div class="actions">
+                <a href="#loop" class="btn btn-primary">View the Loop</a>
+                <a href="#architecture" class="btn btn-secondary">Explore Architecture</a>
+            </div>
+        </section>
+
+        <section id="loop" class="fade-up">
+            <div class="section-header">
+                <h2>The Core Loop</h2>
+                <p>Knowledge is not passively absorbed; it is structurally produced. The system drives output through a rigorous multi-stage pipeline.</p>
+            </div>
+
+            <div class="loop-wrapper">
+                <div class="loop-step">
+                    <div class="loop-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </div>
+                    <h4>Artifact</h4>
+                    <p>Drafting the initial technical or analytical document.</p>
+                </div>
+                <div class="loop-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                
+                <div class="loop-step">
+                    <div class="loop-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </div>
+                    <h4>Review</h4>
+                    <p>Hermes evaluates against domain-specific rubrics.</p>
+                </div>
+                <div class="loop-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                
+                <div class="loop-step">
+                    <div class="loop-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    </div>
+                    <h4>Revision</h4>
+                    <p>Iterative corrections based on review feedback.</p>
+                </div>
+                <div class="loop-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                
+                <div class="loop-step">
+                    <div class="loop-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                    </div>
+                    <h4>Audit</h4>
+                    <p>Final quality assurance and schema validation.</p>
+                </div>
+                <div class="loop-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+                
+                <div class="loop-step">
+                    <div class="loop-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h4>Commit</h4>
+                    <p>Merging artifacts into the local Git repository.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-header">
+                <h2>Capabilities</h2>
+                <p>AOS acts as a disciplined mediator between your intent and the production of rigorous evidence.</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="card">
+                    <h3>Organizes curriculum</h3>
+                    <p>Maintains local learning pathways via structured markdown modules.</p>
+                </div>
+                <div class="card">
+                    <h3>Generates lessons</h3>
+                    <p>Translates complex system topics into focused, actionable learning vectors.</p>
+                </div>
+                <div class="card">
+                    <h3>Creates artifacts</h3>
+                    <p>Transforms raw thought and data into polished technical documents.</p>
+                </div>
+                <div class="card">
+                    <h3>Reviews work</h3>
+                    <p>Automatically applies strict rubrics to highlight flaws and omissions.</p>
+                </div>
+                <div class="card">
+                    <h3>Revises outputs</h3>
+                    <p>Executes targeted improvements without losing the original voice.</p>
+                </div>
+                <div class="card">
+                    <h3>Audits quality</h3>
+                    <p>Ensures final files meet strict schema and syntax definitions before commit.</p>
+                </div>
+                <div class="card">
+                    <h3>Tracks state</h3>
+                    <p>Maintains persistent learner state profiles across sessions.</p>
+                </div>
+                <div class="card">
+                    <h3>Builds evidence</h3>
+                    <p>Consolidates disparate work into a cohesive portfolio of judgment.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-header">
+                <h2>Core Principles</h2>
+                <p>The philosophical foundation governing every automated and manual interaction in the system.</p>
+            </div>
+            <div class="principles-grid">
+                <div class="principle"><span class="p-number">01</span><h4>Purpose before technique</h4></div>
+                <div class="principle"><span class="p-number">02</span><h4>Identification before estimation</h4></div>
+                <div class="principle"><span class="p-number">03</span><h4>Models are controlled omissions</h4></div>
+                <div class="principle"><span class="p-number">04</span><h4>Data is produced, not found</h4></div>
+                <div class="principle"><span class="p-number">05</span><h4>Metrics are proxies, not values</h4></div>
+                <div class="principle"><span class="p-number">06</span><h4>Prediction is not explanation</h4></div>
+                <div class="principle"><span class="p-number">07</span><h4>Infrastructure is epistemic</h4></div>
+                <div class="principle"><span class="p-number">08</span><h4>Markets are adaptive</h4></div>
+                <div class="principle"><span class="p-number">09</span><h4>Risk management is governance</h4></div>
+                <div class="principle"><span class="p-number">10</span><h4>Synthesis requires visible artifacts</h4></div>
+            </div>
+        </section>
+
+        <section id="architecture" class="fade-up">
+            <div class="section-header">
+                <h2>System Architecture</h2>
+                <p>The local-first topology combining curriculum assets with AI orchestration.</p>
+            </div>
+            <div class="arch-diagram">
+                <div class="arch-row">
+                    <div class="arch-node">Modules</div>
+                    <div class="arch-node">Rubrics</div>
+                    <div class="arch-node">Templates</div>
+                    <div class="arch-node">Prompts</div>
+                </div>
+                <div class="arch-row" style="margin-top: 1rem;">
+                    <div class="arch-node core" style="width: 100%; max-width: 400px; padding: 1rem;">Hermes Agents / Orchestration</div>
+                </div>
+                <div class="arch-row" style="margin-top: 1rem;">
+                    <div class="arch-node">Artifacts</div>
+                    <div class="arch-node">Learner State</div>
+                    <div class="arch-node">Audits</div>
+                </div>
+                <div class="arch-row" style="margin-top: 1rem;">
+                    <div class="arch-node core" style="width: 100%; max-width: 400px; border-color: #52525b; color: #a1a1aa;">Git / Commit History</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="section-header">
+                <h2>Proven Loops</h2>
+                <p>AOS is designed to close real knowledge loops, ensuring completion over infinite generation.</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3 class="accent-text">AI Writing Assistance DAG</h3>
+                    <p>Execution of a Statistical Analysis Plan, passing from drafting through rigorous structural review to final state.</p>
+                </div>
+                <div class="card">
+                    <h3 class="accent-text">Quant/Options Lesson 1</h3>
+                    <p>Translating raw mathematical concepts into structured, rubric-validated educational artifacts.</p>
+                </div>
+                <div class="card">
+                    <h3 class="accent-text">AOS Pattern #1</h3>
+                    <p>The foundational closed-loop design proving the core thesis that synthesis requires visible artifacts.</p>
+                </div>
+                <div class="card">
+                    <h3 class="accent-text">Public-Release Cleanup</h3>
+                    <p>Auditing local repository metadata, stripping environment noise, and enforcing pristine git states.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="grid grid-2" style="gap: 4rem;">
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Who is this for?</h2>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="display: flex; gap: 1rem;"><span style="color: var(--accent-1);">-</span> Self-directed learners seeking rigorous systems.</li>
+                        <li style="display: flex; gap: 1rem;"><span style="color: var(--accent-1);">-</span> Interdisciplinary students formalizing domain knowledge.</li>
+                        <li style="display: flex; gap: 1rem;"><span style="color: var(--accent-1);">-</span> Builders creating technical portfolio evidence.</li>
+                        <li style="display: flex; gap: 1rem;"><span style="color: var(--accent-1);">-</span> Reviewers evaluating analytical judgment at scale.</li>
+                        <li style="display: flex; gap: 1rem;"><span style="color: var(--accent-1);">-</span> AI workflow designers testing multi-stage cognitive pipelines.</li>
+                    </ul>
+                </div>
+                <div style="background: var(--card); border: 1px solid var(--border); padding: 2.5rem; border-radius: 12px;">
+                    <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Portfolio Value</h2>
+                    <p style="color: var(--muted); margin-bottom: 1.5rem;">AOS generates tangible proof of analytical reasoning capability. It moves evidence beyond mere conversational transcripts into:</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="arch-node" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Case Studies</span>
+                        <span class="arch-node" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Technical Memos</span>
+                        <span class="arch-node" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Research Plans</span>
+                        <span class="arch-node" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Lesson Artifacts</span>
+                        <span class="arch-node" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Audit Trails</span>
+                        <span class="arch-node" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Interview Stories</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h3 class="accent-text">The loop is the product.</h3>
+            <p>Built as a local-first experimental system for disciplined intellectual production.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
