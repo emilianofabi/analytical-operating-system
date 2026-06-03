@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aos.local/rag/source_registry.schema.json",
+  "title": "AOS RAG Source Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "registry_notes",
+    "sources"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "registry_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "repo_relative_path": {
+      "type": "string",
+      "minLength": 1,
+      "allOf": [
+        {
+          "not": {
+            "pattern": "^[A-Za-z]:[\\\\/]"
+          }
+        },
+        {
+          "not": {
+            "pattern": "\\\\"
+          }
+        },
+        {
+          "not": {
+            "pattern": "(^|/)\\.hermes(/|$)|(^|/)\\.obsidian(/|$)|(^|/)chat-logs(/|$)|(^|/)copy-paste(/|$)|(^|/)audits/quarantine(/|$)|(^|/)node_modules(/|$)|(^|/)dist(/|$)|(^|/)build(/|$)|(^|/)learner-state(/|$)|(^|/)secrets(/|$)|(^|/)\\.env"
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "path",
+        "source_type",
+        "status",
+        "visibility",
+        "evidence_tier",
+        "index_policy"
+      ],
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^AOS-SRC-[A-Z0-9-]+$"
+        },
+        "path": {
+          "$ref": "#/$defs/repo_relative_path"
+        },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "artifact",
+            "audit",
+            "review",
+            "module",
+            "rubric",
+            "template",
+            "status",
+            "handoff",
+            "prompt",
+            "docs",
+            "blueprint",
+            "seed"
+          ]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "reviewed",
+            "revised",
+            "audited",
+            "pass",
+            "pass_with_targeted_revisions",
+            "fail",
+            "deprecated",
+            "unknown"
+          ]
+        },
+        "visibility": {
+          "type": "string",
+          "enum": [
+            "public",
+            "private",
+            "local_only",
+            "excluded"
+          ]
+        },
+        "evidence_tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "index_policy": {
+          "type": "string",
+          "enum": [
+            "full_content",
+            "summary_only",
+            "metadata_only",
+            "excluded"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "loop_status": {
+          "type": "string",
+          "enum": [
+            "not_applicable",
+            "open",
+            "under_review",
+            "audited",
+            "closed",
+            "reopened_with_defect",
+            "unknown"
+          ]
+        },
+        "module_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "competency_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supports_resume_claims": {
+          "type": "boolean"
+        },
+        "supported_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negative_claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "private_risk": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "last_verified_commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{7,40}$"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "visibility": {
+                "const": "excluded"
+              }
+            },
+            "required": [
+              "visibility"
+            ]
+          },
+          "then": {
+            "properties": {
+              "index_policy": {
+                "const": "excluded"
+              },
+              "evidence_tier": {
+                "const": 6
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "supports_resume_claims": {
+                "const": true
+              }
+            },
+            "required": [
+              "supports_resume_claims"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence_tier": {
+                "maximum": 2
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

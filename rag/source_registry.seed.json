@@ -1,0 +1,351 @@
+{
+  "version": "0.1",
+  "registry_notes": [
+    "Seed registry is intentionally minimal and source-governed.",
+    "Blueprint files are included because docs/rag/blueprint/ exists and is tracked as the design authority.",
+    "Status files are metadata-only because they are stale-prone and must not override audits.",
+    "Generated frontend output, dependency folders, private learner-state, chat logs, local tool state, and quarantined outputs are excluded by rag/exclusion_rules.json."
+  ],
+  "sources": [
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-000",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_0.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 0",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Executive overview and blueprint map.",
+        "Supports system-description claims, not resume claims."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-001",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_1.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 1",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Conceptual architecture and lifecycle model."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-002",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_2.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 2",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "RAG requirements and failure modes."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-003",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_3.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 3",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Evidence hierarchy and source authority model."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-004",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_4.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 4",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Source registry design."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-005",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_5.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 5",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Indexing and exclusion policy."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-006",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_6.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 6",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Chunking and manifests."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-007",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_7.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 7",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Retrieval architecture."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-008",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_8.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 8",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Answer contracts and citations."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-009",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_9.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 9",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Agent integration."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-010",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_10.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 10",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Tools and repo structure."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-011",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_11.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 11",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Evaluation framework."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-012",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_12.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 12",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Implementation roadmap and phase gates."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-013",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_13.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 13",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Cross-repo trade-sim integration design."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-BLUEPRINT-014",
+      "path": "docs/rag/blueprint/aos_rag_blueprint_chunk_14.md",
+      "source_type": "blueprint",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS RAG Blueprint Chunk 14",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Blueprint audit and final quality register."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-DOCS-001",
+      "path": "README.md",
+      "source_type": "docs",
+      "status": "unknown",
+      "visibility": "public",
+      "evidence_tier": 3,
+      "index_policy": "full_content",
+      "title": "AOS README",
+      "loop_status": "not_applicable",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "General repo orientation. Not claim evidence."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-DOCS-002",
+      "path": "AOS-QUICK-REF.md",
+      "source_type": "docs",
+      "status": "unknown",
+      "visibility": "public",
+      "evidence_tier": 3,
+      "index_policy": "full_content",
+      "title": "AOS Quick Reference",
+      "loop_status": "not_applicable",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Quick reference document. Not claim evidence."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-STATUS-001",
+      "path": "status.md",
+      "source_type": "status",
+      "status": "unknown",
+      "visibility": "public",
+      "evidence_tier": 4,
+      "index_policy": "metadata_only",
+      "title": "AOS Status",
+      "loop_status": "not_applicable",
+      "supports_resume_claims": false,
+      "private_risk": "low",
+      "notes": [
+        "Status file is stale-prone and must not override audits or committed evidence.",
+        "Metadata-only until status freshness rules are implemented."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-DOCS-003",
+      "path": "docs/aos_proven_loop_pattern_01.md",
+      "source_type": "docs",
+      "status": "pass",
+      "visibility": "public",
+      "evidence_tier": 2,
+      "index_policy": "full_content",
+      "title": "AOS Proven Loop Pattern 01",
+      "loop_status": "closed",
+      "supports_resume_claims": false,
+      "private_risk": "none",
+      "notes": [
+        "Governance documentation for the proven AOS loop pattern."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-DOCS-004",
+      "path": "docs/index.html",
+      "source_type": "docs",
+      "status": "unknown",
+      "visibility": "public",
+      "evidence_tier": 3,
+      "index_policy": "summary_only",
+      "title": "AOS Public Documentation Index",
+      "loop_status": "not_applicable",
+      "supports_resume_claims": false,
+      "private_risk": "low",
+      "notes": [
+        "Public-facing HTML documentation. Summary-only until public-safe content checks are automated."
+      ]
+    },
+    {
+      "source_id": "AOS-SRC-DOCS-005",
+      "path": "apps/aos-landing",
+      "source_type": "docs",
+      "status": "unknown",
+      "visibility": "public",
+      "evidence_tier": 3,
+      "index_policy": "summary_only",
+      "title": "AOS Landing App Source",
+      "loop_status": "not_applicable",
+      "supports_resume_claims": false,
+      "private_risk": "low",
+      "notes": [
+        "Aggregate public-facing app source entry.",
+        "Generated dependency and build outputs are excluded by rag/exclusion_rules.json.",
+        "Do not index apps/aos-landing/node_modules, apps/aos-landing/dist, or apps/aos-landing/build."
+      ]
+    }
+  ]
+}

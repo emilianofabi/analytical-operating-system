@@ -1,0 +1,271 @@
+{
+  "version": "0.1",
+  "rules": [
+    {
+      "pattern": "learner-state/current_student_state.local.json",
+      "reason": "Private local learner-state file; must never be indexed or cited.",
+      "risk_type": "private_learner_data",
+      "applies_to": [
+        "scanner",
+        "registry",
+        "retrieval"
+      ]
+    },
+    {
+      "pattern": "learner-state/*.local.json",
+      "reason": "Private local learner-state variants are personal and non-evidence.",
+      "risk_type": "private_learner_data",
+      "applies_to": [
+        "scanner",
+        "registry",
+        "retrieval"
+      ]
+    },
+    {
+      "pattern": "learner-state/",
+      "reason": "Private learner-state directory is excluded from RAG v0.1.",
+      "risk_type": "private_learner_data",
+      "applies_to": [
+        "scanner",
+        "registry",
+        "retrieval"
+      ]
+    },
+    {
+      "pattern": "chat-logs/",
+      "reason": "Chat logs are ephemeral, private, and not evidence.",
+      "risk_type": "private_conversation",
+      "applies_to": [
+        "scanner",
+        "registry",
+        "retrieval"
+      ]
+    },
+    {
+      "pattern": ".env",
+      "reason": "Environment files can contain secrets and local configuration.",
+      "risk_type": "secret",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": ".env*",
+      "reason": "Environment variants can contain secrets and local configuration.",
+      "risk_type": "secret",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": ".hermes/",
+      "reason": "Local tool state is not evidence and may contain execution context.",
+      "risk_type": "local_tool_state",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": ".obsidian/",
+      "reason": "Local workspace metadata is editor state, not evidence.",
+      "risk_type": "local_tool_state",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "prompts/agents/aos_debugger_agent.prompt.md",
+      "reason": "Debugger/provider prompt may expose local debugging topology and should not be indexed.",
+      "risk_type": "local_debugger_provider",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "prompts/**/*debugger*",
+      "reason": "Debugger prompt variants can contain local troubleshooting/provider context.",
+      "risk_type": "local_debugger_provider",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "prompts/**/*provider*",
+      "reason": "Provider topology prompts can reveal local model/provider configuration.",
+      "risk_type": "local_debugger_provider",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "copy-paste/",
+      "reason": "Scratch copy buffers are temporary and non-authoritative.",
+      "risk_type": "scratch",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "audits/quarantine/",
+      "reason": "Quarantined audit outputs failed quality gates and must not be cited.",
+      "risk_type": "failed_output",
+      "applies_to": [
+        "scanner",
+        "registry",
+        "retrieval"
+      ]
+    },
+    {
+      "pattern": "node_modules/",
+      "reason": "Third-party dependencies are generated/vendor content, not AOS evidence.",
+      "risk_type": "generated_vendor_content",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "dist/",
+      "reason": "Build output is generated from source and should not be indexed independently.",
+      "risk_type": "generated_frontend_output",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "build/",
+      "reason": "Build output is generated from source and should not be indexed independently.",
+      "risk_type": "generated_frontend_output",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "apps/**/node_modules/",
+      "reason": "Frontend dependency trees are generated/vendor content.",
+      "risk_type": "generated_vendor_content",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "apps/**/dist/",
+      "reason": "Frontend distribution folders are generated output.",
+      "risk_type": "generated_frontend_output",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "apps/**/build/",
+      "reason": "Frontend build folders are generated output.",
+      "risk_type": "generated_frontend_output",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "apps/**/.vite/",
+      "reason": "Frontend bundler cache is generated output.",
+      "risk_type": "generated_frontend_output",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "artifacts/generated/raw_outputs/",
+      "reason": "Raw generated outputs are not reviewed evidence.",
+      "risk_type": "generated_output",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "artifacts/generated/scratch/",
+      "reason": "Generated scratch files are temporary and non-authoritative.",
+      "risk_type": "scratch",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "secrets/",
+      "reason": "Secrets directory may contain keys, credentials, and local configuration.",
+      "risk_type": "secret",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "*.key",
+      "reason": "Key files are credentials and must never enter RAG context.",
+      "risk_type": "secret",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "*.pem",
+      "reason": "Certificate/private-key files are credentials and must never enter RAG context.",
+      "risk_type": "secret",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "^[A-Za-z]:/",
+      "reason": "Absolute local machine paths are not repo-relative and are not portable evidence.",
+      "risk_type": "local_machine_path",
+      "applies_to": [
+        "registry",
+        "review"
+      ]
+    },
+    {
+      "pattern": "^[A-Za-z]:\\\\",
+      "reason": "Absolute local machine paths are not repo-relative and are not portable evidence.",
+      "risk_type": "local_machine_path",
+      "applies_to": [
+        "registry",
+        "review"
+      ]
+    },
+    {
+      "pattern": "notes/private/",
+      "reason": "Private notes are not source-governed evidence.",
+      "risk_type": "private_notes",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    },
+    {
+      "pattern": "*private*notes*",
+      "reason": "Private notes should be over-excluded until explicitly reviewed.",
+      "risk_type": "private_notes",
+      "applies_to": [
+        "scanner",
+        "registry"
+      ]
+    }
+  ]
+}
