@@ -20,6 +20,7 @@ import {
 
 import curriculumData from './data/curriculum.json';
 import * as metrics from './utils/curriculumMetrics';
+import AOSKnowledgeGraph from './graph/AOSKnowledgeGraph';
 
 const {
   systemStatus,
@@ -205,7 +206,7 @@ export default function AOSCommandCenter() {
 
         {/* Tab Navigation */}
         <div className="flex gap-4 border-b border-white/10 pb-4 overflow-x-auto no-scrollbar">
-          {['curriculum', 'evidence', 'agents', 'repo'].map(tab => (
+          {['curriculum', 'graph', 'evidence', 'agents', 'repo'].map(tab => (
             <button 
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -213,7 +214,7 @@ export default function AOSCommandCenter() {
                 activeTab === tab ? 'text-champagne border-b-2 border-champagne' : 'text-ivory/40 hover:text-ivory/80'
               }`}
             >
-              {tab === 'curriculum' ? 'Curriculum Map' : tab === 'evidence' ? 'Portfolio Evidence' : tab === 'agents' ? 'Agent Ecology' : 'Repo'}
+              {tab === 'curriculum' ? 'Curriculum Map' : tab === 'graph' ? 'Knowledge Graph' : tab === 'evidence' ? 'Portfolio Evidence' : tab === 'agents' ? 'Agent Ecology' : 'Repo'}
             </button>
           ))}
         </div>
@@ -458,6 +459,8 @@ export default function AOSCommandCenter() {
             </div>
           </div>
         )}
+
+        {activeTab === 'graph' && <AOSKnowledgeGraph />}
 
         {activeTab === 'evidence' && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
